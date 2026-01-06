@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ashish Sukumar • Portfolio</title>
+  <meta name="description" content="Robotics • Embedded Systems • ML — Ashish Sukumar" />
+  <meta name="theme-color" content="#0b0f1a" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Background visuals -->
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="bg-glow" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Header / Nav -->
+  <header class="topbar" id="topbar">
+    <div class="container topbar-inner">
+      <a class="logo" href="#top" aria-label="Home">
+        <span class="logo-dot"></span><span class="logo-text">Ashish</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="burger" aria-hidden="true"></span>
+        </button>
+
+        <div class="nav-menu" id="navMenu">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#experience" class="nav-link">Experience</a>
+          <a href="#contact" class="nav-link">Contact</a>
+
+          <!-- moving highlight behind active link -->
+          <div class="nav-indicator" id="navIndicator" aria-hidden="true"></div>
+
+          <button class="pill ghost" id="themeToggle" type="button" aria-pressed="false" title="Toggle theme">
+            <span class="pill-icon" aria-hidden="true">☾</span>
+            <span class="pill-text">Theme</span>
+          </button>
+
+          <a class="pill" href="assets/Ashish_Sukumar_CV.pdf" target="_blank" rel="noopener">
+            <span class="pill-icon" aria-hidden="true">⬇</span>
+            <span class="pill-text">Resume</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="badge reveal">
+            <span class="badge-dot" aria-hidden="true"></span>
+            <span>M.S. Robotics Engineering @ WPI • Open to Robotics / ML / IoT roles</span>
+          </div>
+
+          <h1 class="reveal">
+            I build <span class="gradient">robotics + IoT systems</span> I'm interested in —
+            <span class="type" id="typeTarget" data-words="Deep Learning,Computer Vision,ROS2,Embedded Systems"></span>
+          </h1>
+
+          <p class="lead reveal">
+            Robotics engineering graduate student with hands-on experience in ROS, SLAM, path planning,
+            embedded systems, and ML-driven safety applications—bridging simulation to real-world hardware.
+          </p>
+
+          <div class="hero-cta reveal">
+            <a class="pill big" href="#projects">
+              <span class="pill-icon" aria-hidden="true">↳</span>
+              <span class="pill-text">View projects</span>
+            </a>
+            <a class="pill big ghost" href="#contact">
+              <span class="pill-icon" aria-hidden="true">✉</span>
+              <span class="pill-text">Contact</span>
+            </a>
+          </div>
+
+          <div class="hero-metrics reveal" role="list">
+            <div class="metric" role="listitem">
+              <div class="metric-k" data-count="6">0</div>
+              <div class="metric-v">Robotics builds</div>
+            </div>
+            <div class="metric" role="listitem">
+              <div class="metric-k" data-count="2">0</div>
+              <div class="metric-v">Publications</div>
+            </div>
+            <div class="metric" role="listitem">
+              <div class="metric-k" data-count="5">0</div>
+              <div class="metric-v">Core stacks</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card reveal">
+          <div class="card">
+            <div class="card-top">
+              <div class="avatar" aria-hidden="true">🤖</div>
+              <div>
+                <div class="card-title">Ashish Sukumar</div>
+                <div class="card-sub">Robotics • Embedded Systems • ML</div>
+              </div>
+            </div>
+
+            <div class="card-list">
+              <div class="card-item"><span class="dot"></span>
+                <span><b>Now:</b> M.S. Robotics Engineering @ WPI (2025–Present)</span>
+              </div>
+              <div class="card-item"><span class="dot"></span>
+                <span><b>Focus:</b> Deep Learning, Computer Vision, ROS2, Embedded Systems</span>
+              </div>
+              <div class="card-item"><span class="dot"></span>
+                <span><b>Highlight:</b> Fire-aware Smart-Bot (ICIoT 2025), ML risk prediction publication</span>
+              </div>
+            </div>
+
+            <!-- ICON LINKS -->
+            <div class="icon-links">
+              <!-- GitHub -->
+              <a class="icon-link" href="https://github.com/Yami1106" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 .5C5.73.5.75 5.6.75 12c0 5.11 3.29 9.44 7.86 10.97.58.11.79-.26.79-.57v-2.1c-3.2.71-3.87-1.58-3.87-1.58-.52-1.36-1.27-1.72-1.27-1.72-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.21 1.76 1.21 1.02 1.79 2.67 1.27 3.32.97.1-.76.4-1.27.73-1.56-2.55-.3-5.23-1.31-5.23-5.84 0-1.29.45-2.34 1.18-3.17-.12-.3-.51-1.52.11-3.17 0 0 .97-.32 3.18 1.21.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.21-1.53 3.18-1.21 3.18-1.21.62 1.65.23 2.87.11 3.17.73.83 1.18 1.88 1.18 3.17 0 4.54-2.69 5.54-5.25 5.84.41.36.78 1.08.78 2.18v3.23c0 .31.21.68.8.57C19.96 21.44 23.25 17.11 23.25 12 23.25 5.6 18.27.5 12 .5z"/>
+                </svg>
+              </a>
+
+              <!-- LinkedIn -->
+              <a class="icon-link" href="https://www.linkedin.com/in/ashish-sukumar" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.95v5.66H9.35V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/>
+                </svg>
+              </a>
+
+              <!-- Email -->
+              <a class="icon-link" href="mailto:ash11062310@gmail.com" aria-label="Email">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/>
+                </svg>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">About</h2>
+        <div class="grid-2">
+          <div class="panel reveal">
+            <h3>Short bio</h3>
+            <p>
+              I'm a Robotics Engineering M.S. student at Worcester Polytechnic Institute, with a strong foundation in
+              computer science and hands-on experience building robotics and IoT systems. I've worked on ROS-based
+              autonomy (SLAM, Gmapping, navigation), embedded sensing pipelines, and ML-driven safety applications—
+              from simulation to hardware prototypes.
+            </p>
+            <div class="chips">
+              <span class="chip">ROS / ROS2</span>
+              <span class="chip">SLAM / Gmapping</span>
+              <span class="chip">Path Planning</span>
+              <span class="chip">Embedded + Sensors</span>
+              <span class="chip">IoT + ML</span>
+            </div>
+          </div>
+
+          <div class="panel reveal">
+            <h3>Highlights</h3>
+            <ul class="bullets">
+              <li>Junior Project Technical Assistant at e-Yantra (IIT Bombay initiative): robotics workshops + development</li>
+              <li>Built ROS projects including differential drive + skid-steer robots with obstacle avoidance + mapping</li>
+              <li>Created fire-detection robotics system with localization, navigation, live streaming, and app control</li>
+              <li>Published 2 papers on fire detection and AI-responsive robotic systems</li>
+              <li>Excellence Award for outstanding student & 2nd place at Project Expo 2025, SRMIST</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">Skills</h2>
+
+        <div class="skills reveal">
+          <div class="skill">
+            <div class="skill-top"><span>ROS / ROS2 / Gazebo</span><span class="pct">90%</span></div>
+            <div class="bar"><span style="width:90%"></span></div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-top"><span>SLAM / Navigation / Path Planning</span><span class="pct">85%</span></div>
+            <div class="bar"><span style="width:85%"></span></div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-top"><span>Embedded Systems (Arduino / ESP32 / Sensors)</span><span class="pct">85%</span></div>
+            <div class="bar"><span style="width:85%"></span></div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-top"><span>Programming (C / C++ / Python / JavaScript)</span><span class="pct">85%</span></div>
+            <div class="bar"><span style="width:85%"></span></div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-top"><span>Neural Networks / ML / Deep Learning</span><span class="pct">80%</span></div>
+            <div class="bar"><span style="width:80%"></span></div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-top"><span>Full-Stack Development (React / HTML / CSS)</span><span class="pct">75%</span></div>
+            <div class="bar"><span style="width:75%"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title reveal">Projects</h2>
+          <div class="filters reveal" role="tablist" aria-label="Project filters">
+            <button class="filter active" data-filter="all" role="tab" aria-selected="true">All</button>
+            <button class="filter" data-filter="robotics" role="tab">Robotics</button>
+            <button class="filter" data-filter="ml" role="tab">ML</button>
+            <button class="filter" data-filter="iot" role="tab">IoT</button>
+          </div>
+        </div>
+
+        <div class="cards">
+          <article class="cardx reveal" data-tags="robotics ml iot">
+            <div class="cardx-top">
+              <div class="tag">Robotics</div>
+              <div class="tag ghost">IoT + ML</div>
+            </div>
+            <h3>Fire Aware Smart-Bot</h3>
+            <p>
+              Fire detection + localization with robotic response: shortest path navigation, live video streaming,
+              and mobile app control using Arduino Nano 33 BLE Sense + ESP32. Presented at ICIoT 2025.
+            </p>
+            <div class="cardx-actions">
+              <button class="mini openModal" data-title="Fire Aware Smart-Bot"
+                data-body="Built an end-to-end fire safety robot with sensing, localization, navigation, streaming, and mobile control. Uses Arduino Nano 33 BLE Sense for sensor fusion and ESP32 for video streaming. Implements shortest path algorithms for navigation to fire source. Presented at the 5th International Conference on IoT (ICIoT 2025).">
+                Details
+              </button>
+            </div>
+          </article>
+
+          <article class="cardx reveal" data-tags="ml iot">
+            <div class="cardx-top">
+              <div class="tag">ML</div>
+              <div class="tag ghost">Safety</div>
+            </div>
+            <h3>Fire Prediction using Color</h3>
+            <p>
+              Neural network trained on fire/non-fire datasets using color sensor patterns for early hazard prediction,
+              demonstrating ML + IoT integration. Published in IJERCSE.
+            </p>
+            <div class="cardx-actions">
+              <button class="mini openModal" data-title="Fire Prediction using Color"
+                data-body="Trained a neural network to classify fire risk from sensor color patterns. The model analyzes RGB values from APDS-9960 color sensors to predict fire presence before visual flames appear. Demonstrates integration of machine learning with IoT hardware for proactive safety systems. Published in IJERCSE, March 2025.">
+                Details
+              </button>
+            </div>
+          </article>
+
+          <article class="cardx reveal" data-tags="robotics">
+            <div class="cardx-top">
+              <div class="tag">Robotics</div>
+              <div class="tag ghost">ROS</div>
+            </div>
+            <h3>ROS Autonomous Navigation Stack</h3>
+            <p>
+              Implemented autonomous navigation of a skid-steer robot in Gazebo using SLAM, Gmapping,
+              lidar + odometry, and ROS pub-sub architecture.
+            </p>
+            <div class="cardx-actions">
+              <button class="mini openModal" data-title="ROS Autonomous Navigation Stack"
+                data-body="Built a full navigation pipeline in Gazebo simulation. Implemented differential drive and skid-steer robot models with obstacle avoidance and mapping using SLAM and Gmapping. Utilized ROS publisher-subscriber models with lidar and odometry sensors for localization and path planning. Part of ROS Mentorship Program at RigBetel Labs.">
+                Details
+              </button>
+            </div>
+          </article>
+
+          <article class="cardx reveal" data-tags="iot">
+            <div class="cardx-top">
+              <div class="tag">IoT</div>
+              <div class="tag ghost">Cloud</div>
+            </div>
+            <h3>Air Quality Analyzer</h3>
+            <p>
+              IoT system with ESP8266 + MQ135 sensor and cloud visualization (ThingSpeak) for real-time
+              air quality monitoring and analysis.
+            </p>
+            <div class="cardx-actions">
+              <button class="mini openModal" data-title="Air Quality Analyzer"
+                data-body="Developed an IoT-based air quality monitoring system using ESP8266 microcontroller and MQ135 gas sensor. Real-time data is collected and transmitted to ThingSpeak cloud platform for visualization and analysis. Enables remote monitoring of air quality parameters including CO2, NH3, and other harmful gases.">
+                Details
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">Experience</h2>
+
+        <div class="timeline">
+          <div class="titem reveal">
+            <div class="tline"></div>
+            <div class="tcard">
+              <div class="tmeta">
+                <span class="trole">Junior Project Technical Assistant • e-Yantra (IIT Bombay Initiative)</span>
+                <span class="tdate">Jun 2024 — Feb 2025</span>
+              </div>
+              <p>
+                Worked on the Intrepid Explorer robotics theme, contributing to design, development, and task execution.
+                Conducted workshops on embedded systems and robotics for school students across India.
+              </p>
+              <ul class="bullets">
+                <li>Hands-on work with Webots simulation, embedded systems, and image processing</li>
+                <li>Created structured learning materials using mdBook for robotics education</li>
+                <li>Mentored students in Arduino programming and sensor integration</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="titem reveal">
+            <div class="tline"></div>
+            <div class="tcard">
+              <div class="tmeta">
+                <span class="trole">ROS Mentorship Program • RigBetel Labs (Remote)</span>
+                <span class="tdate">Jun 2023 — Aug 2023</span>
+              </div>
+              <p>
+                Built ROS nodes and completed an end-to-end project designing differential drive and skid-steer robots
+                with full autonomy capabilities.
+              </p>
+              <ul class="bullets">
+                <li>Implemented obstacle avoidance and mapping using SLAM and Gmapping</li>
+                <li>Strengthened ROS pub-sub architecture and integration workflow</li>
+                <li>Developed custom launch files and parameter configurations for robot simulation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">Contact</h2>
+
+        <div class="grid-2">
+          <div class="panel reveal">
+            <h3>Let's talk</h3>
+            <p>I'm actively seeking opportunities in robotics engineering, embedded systems, and ML/IoT applications. 
+            Excited to work on projects involving autonomous navigation, SLAM, sensor fusion, and intelligent robotic systems.</p>
+
+            <div class="contact-list">
+              <a class="contact-item" href="https://www.linkedin.com/in/ashish-sukumar" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <span class="contact-ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.95v5.66H9.35V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+                </span>
+                <span class="contact-text">LinkedIn</span>
+              </a>
+
+              <a class="contact-item" href="https://github.com/Yami1106" target="_blank" rel="noopener" aria-label="GitHub">
+                <span class="contact-ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 .5C5.73.5.75 5.6.75 12c0 5.11 3.29 9.44 7.86 10.97.58.11.79-.26.79-.57v-2.1c-3.2.71-3.87-1.58-3.87-1.58-.52-1.36-1.27-1.72-1.27-1.72-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.21 1.76 1.21 1.02 1.79 2.67 1.27 3.32.97.1-.76.4-1.27.73-1.56-2.55-.3-5.23-1.31-5.23-5.84 0-1.29.45-2.34 1.18-3.17-.12-.3-.51-1.52.11-3.17 0 0 .97-.32 3.18 1.21.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.21-1.53 3.18-1.21 3.18-1.21.62 1.65.23 2.87.11 3.17.73.83 1.18 1.88 1.18 3.17 0 4.54-2.69 5.54-5.25 5.84.41.36.78 1.08.78 2.18v3.23c0 .31.21.68.8.57C19.96 21.44 23.25 17.11 23.25 12 23.25 5.6 18.27.5 12 .5z"/></svg>
+                </span>
+                <span class="contact-text">GitHub</span>
+              </a>
+
+              <a class="contact-item" href="mailto:ash11062310@gmail.com" aria-label="Email">
+                <span class="contact-ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg>
+                </span>
+                <span class="contact-text">Gmail</span>
+              </a>
+            </div>
+          </div>
+
+          <form class="panel reveal" id="contactForm">
+            <h3>Quick message</h3>
+            <label>
+              <span>Name</span>
+              <input required name="name" autocomplete="name" placeholder="Your name" />
+            </label>
+            <label>
+              <span>Email</span>
+              <input required type="email" name="email" autocomplete="email" placeholder="you@domain.com" />
+            </label>
+            <label>
+              <span>Message</span>
+              <textarea required name="message" rows="4" placeholder="What would you like to discuss?"></textarea>
+            </label>
+            <button class="pill big" type="submit">
+              <span class="pill-icon" aria-hidden="true">→</span>
+              <span class="pill-text">Send Message</span>
+            </button>
+            <p class="form-note">This is a demo form. Integration with email service coming soon.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <a href="#top" class="mini ghost">Back to top</a>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Project details">
+    <div class="modal-backdrop" data-close="true"></div>
+    <div class="modal-card" role="document">
+      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+      <h3 id="modalTitle">Title</h3>
+      <p id="modalBody">Body</p>
+      <div class="modal-actions">
+        <button class="pill ghost" data-close="true" type="button">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
