@@ -217,6 +217,17 @@ section{ scroll-margin-top: calc(var(--header-h) + 22px); }
 .pill-icon{ opacity:.95; }
 .pill-text{ opacity:.95; }
 
+/* Theme toggle button colors */
+#themeToggle {
+  color: var(--text);
+  transition: transform .16s ease, filter .2s ease, background .2s ease, color .2s ease;
+}
+#themeToggle .pill-icon,
+#themeToggle .pill-text {
+  color: inherit;
+  transition: color .2s ease;
+}
+
 .mini{
   display:inline-flex;
   padding:9px 12px;
