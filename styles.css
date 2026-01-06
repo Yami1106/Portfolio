@@ -35,9 +35,7 @@ html{ scroll-behavior:smooth; }
 body{
   margin:0;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: radial-gradient(1200px 600px at 20% -10%, rgba(124,58,237,.35), transparent 60%),
-              radial-gradient(1200px 600px at 90% 10%, rgba(34,211,238,.25), transparent 55%),
-              linear-gradient(180deg, var(--bg), var(--bg2));
+  background: var(--bg);
   color:var(--text);
   overflow-x:hidden;
 
@@ -66,14 +64,7 @@ section{ scroll-margin-top: calc(var(--header-h) + 22px); }
   z-index:-3;
 }
 .bg-glow{
-  position:fixed;
-  inset:-20%;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(124,58,237,.14), transparent 55%),
-    radial-gradient(circle at 80% 40%, rgba(34,211,238,.10), transparent 55%),
-    radial-gradient(circle at 50% 90%, rgba(167,139,250,.10), transparent 60%);
-  filter: blur(18px);
-  z-index:-2;
+  display: none;
 }
 .grain{
   position:fixed; inset:0;
@@ -226,6 +217,24 @@ section{ scroll-margin-top: calc(var(--header-h) + 22px); }
 #themeToggle .pill-text {
   color: inherit;
   transition: color .2s ease;
+}
+
+/* Send Message button - brighter and more prominent */
+#contactForm .pill.big {
+  background: linear-gradient(135deg, rgba(124,58,237,.7), rgba(34,211,238,.5));
+  border: 1px solid rgba(124,58,237,.6);
+  box-shadow: 0 0 25px rgba(124,58,237,.4), 0 12px 30px rgba(0,0,0,.3);
+  font-weight: 800;
+}
+#contactForm .pill.big:hover {
+  background: linear-gradient(135deg, rgba(124,58,237,.85), rgba(34,211,238,.65));
+  box-shadow: 0 0 35px rgba(124,58,237,.6), 0 15px 35px rgba(0,0,0,.4);
+  filter: brightness(1.15);
+}
+[data-theme="light"] #contactForm .pill.big {
+  background: linear-gradient(135deg, rgba(124,58,237,.8), rgba(34,211,238,.6));
+  border: 1px solid rgba(124,58,237,.7);
+  box-shadow: 0 0 25px rgba(124,58,237,.3), 0 12px 30px rgba(0,0,0,.2);
 }
 
 .mini{
@@ -492,6 +501,58 @@ section{ scroll-margin-top: calc(var(--header-h) + 22px); }
   background: linear-gradient(90deg, var(--accent2), var(--accent1));
   transform: translateX(-10px);
   filter:saturate(1.1);
+}
+
+/* Languages & Tools section */
+.subsection-title {
+  margin: 40px 0 20px;
+  font-size: clamp(20px, 2.5vw, 26px);
+  letter-spacing: -.4px;
+  color: var(--text);
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.tool-category {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.04);
+  padding: 18px;
+}
+
+.tool-category h4 {
+  margin: 0 0 12px;
+  font-size: 15px;
+  letter-spacing: -.2px;
+  color: var(--text);
+  font-weight: 750;
+}
+
+.tool-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tool-chip {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.06);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  transition: background .2s ease, color .2s ease, transform .15s ease;
+}
+
+.tool-chip:hover {
+  background: rgba(255,255,255,.10);
+  color: var(--text);
+  transform: translateY(-1px);
 }
 
 /* Projects - FIXED ALIGNMENT */
@@ -816,6 +877,7 @@ input:focus, textarea:focus{
   .hero-grid{ grid-template-columns: 1fr; }
   .cards{ grid-template-columns: 1fr; }
   .skills{ grid-template-columns: repeat(2, 1fr); }
+  .tools-grid{ grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 720px){
   .nav-toggle{ display:inline-flex; align-items:center; justify-content:center; }
@@ -840,6 +902,7 @@ input:focus, textarea:focus{
   .nav-indicator{ display:none; }
   .cards{ grid-template-columns: 1fr; }
   .skills{ grid-template-columns: 1fr; }
+  .tools-grid{ grid-template-columns: 1fr; }
   .grid-2{ grid-template-columns: 1fr; }
   .tmeta{ flex-direction: column; align-items: flex-start; }
   .tdate{ white-space: normal; }

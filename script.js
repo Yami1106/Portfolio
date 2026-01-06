@@ -38,7 +38,7 @@ $$(".nav-link").forEach(a => {
   });
 });
 
-// ---------- Theme toggle - FIXED ----------
+// ---------- Theme toggle ----------
 const themeToggle = $("#themeToggle");
 const storedTheme = localStorage.getItem("theme");
 
@@ -168,11 +168,8 @@ navLinks.forEach(link => {
   });
 });
 
-// ---------- Scrollspy + moving nav indicator ----------
+// ---------- Navigation hover indicator (no scrollspy) ----------
 const navIndicator = $("#navIndicator");
-const sections = navLinks
-  .map(a => document.querySelector(a.getAttribute("href")))
-  .filter(Boolean);
 
 function moveIndicatorTo(el) {
   if (!navIndicator || !el || !navMenu) return;
@@ -187,37 +184,26 @@ function moveIndicatorTo(el) {
   navIndicator.style.opacity = "1";
 }
 
-function setActiveLink(id) {
-  const active = navLinks.find(a => a.getAttribute("href") === "#" + id);
-  if (!active) return;
-
-  navLinks.forEach(a => a.classList.remove("active"));
-  active.classList.add("active");
-  moveIndicatorTo(active);
-}
-
-if (sections.length) {
-  const spy = new IntersectionObserver((entries) => {
-    const visible = entries
-      .filter(e => e.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-    if (visible?.target?.id) setActiveLink(visible.target.id);
-  }, { threshold: [0.25, 0.4, 0.55, 0.7] });
-
-  sections.forEach(sec => spy.observe(sec));
-
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      const first = navLinks[0];
-      if (first) moveIndicatorTo(first);
-    }, 50);
+// Show indicator on hover
+navLinks.forEach(link => {
+  link.addEventListener("mouseenter", () => {
+    moveIndicatorTo(link);
   });
+});
 
-  window.addEventListener("resize", () => {
-    const active = $(".nav-link.active");
-    if (active) moveIndicatorTo(active);
-  });
-}
+// Initialize indicator position on first link
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const first = navLinks[0];
+    if (first) moveIndicatorTo(first);
+  }, 100);
+});
+
+// Update indicator position on resize
+window.addEventListener("resize", () => {
+  const first = navLinks[0];
+  if (first) moveIndicatorTo(first);
+});
 
 // ---------- Project filtering ----------
 const filters = $$(".filter");
@@ -284,67 +270,72 @@ $("#contactForm")?.addEventListener("submit", (e) => {
 });
 
 // ---------- Footer year ----------
-$("#year").textContent = String(new Date().getFullYear());
+const yearElement = $("#year");
+if (yearElement) {
+  yearElement.textContent = String(new Date().getFullYear());
+}
 
 // ---------- Starfield ----------
 const canvas = $("#stars");
-const ctx = canvas.getContext("2d", { alpha: true });
+if (canvas) {
+  const ctx = canvas.getContext("2d", { alpha: true });
 
-let W = 0, H = 0, DPR = Math.min(2, window.devicePixelRatio || 1);
-let stars = [];
+  let W = 0, H = 0, DPR = Math.min(2, window.devicePixelRatio || 1);
+  let stars = [];
 
-function resize() {
-  W = Math.floor(window.innerWidth);
-  H = Math.floor(window.innerHeight);
-  DPR = Math.min(2, window.devicePixelRatio || 1);
-  canvas.width = Math.floor(W * DPR);
-  canvas.height = Math.floor(H * DPR);
-  canvas.style.width = W + "px";
-  canvas.style.height = H + "px";
-  ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  function resize() {
+    W = Math.floor(window.innerWidth);
+    H = Math.floor(window.innerHeight);
+    DPR = Math.min(2, window.devicePixelRatio || 1);
+    canvas.width = Math.floor(W * DPR);
+    canvas.height = Math.floor(H * DPR);
+    canvas.style.width = W + "px";
+    canvas.style.height = H + "px";
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
 
-  const count = Math.floor((W * H) / 14000);
-  stars = new Array(count).fill(0).map(() => ({
-    x: Math.random() * W,
-    y: Math.random() * H,
-    r: Math.random() * 1.6 + 0.2,
-    a: Math.random() * 0.75 + 0.15,
-    vx: (Math.random() - 0.5) * 0.15,
-    vy: (Math.random() - 0.5) * 0.15,
-  }));
-}
-resize();
-window.addEventListener("resize", resize);
-
-let mx = W / 2, my = H / 2;
-window.addEventListener("pointermove", (e) => { mx = e.clientX; my = e.clientY; });
-
-function draw() {
-  ctx.clearRect(0, 0, W, H);
-
-  const g = ctx.createRadialGradient(W*0.5, H*0.35, 0, W*0.5, H*0.5, Math.max(W,H)*0.75);
-  g.addColorStop(0, "rgba(255,255,255,0.02)");
-  g.addColorStop(1, "rgba(0,0,0,0.35)");
-  ctx.fillStyle = g;
-  ctx.fillRect(0, 0, W, H);
-
-  const px = (mx / W - 0.5) * 10;
-  const py = (my / H - 0.5) * 10;
-
-  for (const s of stars) {
-    s.x += s.vx;
-    s.y += s.vy;
-    if (s.x < -20) s.x = W + 20;
-    if (s.x > W + 20) s.x = -20;
-    if (s.y < -20) s.y = H + 20;
-    if (s.y > H + 20) s.y = -20;
-
-    ctx.beginPath();
-    ctx.fillStyle = `rgba(255,255,255,${s.a})`;
-    ctx.arc(s.x + px, s.y + py, s.r, 0, Math.PI * 2);
-    ctx.fill();
+    const count = Math.floor((W * H) / 14000);
+    stars = new Array(count).fill(0).map(() => ({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: Math.random() * 1.6 + 0.2,
+      a: Math.random() * 0.75 + 0.15,
+      vx: (Math.random() - 0.5) * 0.15,
+      vy: (Math.random() - 0.5) * 0.15,
+    }));
   }
+  resize();
+  window.addEventListener("resize", resize);
 
-  requestAnimationFrame(draw);
+  let mx = W / 2, my = H / 2;
+  window.addEventListener("pointermove", (e) => { mx = e.clientX; my = e.clientY; });
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    const g = ctx.createRadialGradient(W*0.5, H*0.35, 0, W*0.5, H*0.5, Math.max(W,H)*0.75);
+    g.addColorStop(0, "rgba(255,255,255,0.02)");
+    g.addColorStop(1, "rgba(0,0,0,0.35)");
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, W, H);
+
+    const px = (mx / W - 0.5) * 10;
+    const py = (my / H - 0.5) * 10;
+
+    for (const s of stars) {
+      s.x += s.vx;
+      s.y += s.vy;
+      if (s.x < -20) s.x = W + 20;
+      if (s.x > W + 20) s.x = -20;
+      if (s.y < -20) s.y = H + 20;
+      if (s.y > H + 20) s.y = -20;
+
+      ctx.beginPath();
+      ctx.fillStyle = `rgba(255,255,255,${s.a})`;
+      ctx.arc(s.x + px, s.y + py, s.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    requestAnimationFrame(draw);
+  }
+  if (!prefersReducedMotion()) draw();
 }
-if (!prefersReducedMotion()) draw();
