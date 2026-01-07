@@ -254,20 +254,52 @@ window.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && modal.classList.contains("show")) closeModal();
 });
 
-// ---------- Contact form demo ----------
+// ---------- Contact form with AJAX (no redirect) ----------
 const toast = $("#toast");
 function showToast(msg) {
   toast.textContent = msg;
   toast.classList.add("show");
   clearTimeout(showToast._t);
-  showToast._t = setTimeout(() => toast.classList.remove("show"), 2400);
+  showToast._t = setTimeout(() => toast.classList.remove("show"), 3000);
 }
 
-$("#contactForm")?.addEventListener("submit", (e) => {
-  e.preventDefault();
-  showToast("Message captured! This is a demo form. Email integration coming soon.");
-  e.target.reset();
-});
+const contactForm = $("#contactForm");
+if (contactForm) {
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(contactForm);
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitButton.querySelector('.pill-text').textContent;
+    
+    // Disable button and show loading state
+    submitButton.disabled = true;
+    submitButton.querySelector('.pill-text').textContent = 'Sending...';
+    
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        showToast('✓ Message sent successfully! I\'ll get back to you soon.');
+        contactForm.reset();
+      } else {
+        showToast('✗ Oops! There was a problem sending your message.');
+      }
+    } catch (error) {
+      showToast('✗ Oops! There was a problem sending your message.');
+    }
+    
+    // Re-enable button
+    submitButton.disabled = false;
+    submitButton.querySelector('.pill-text').textContent = originalText;
+  });
+}
 
 // ---------- Footer year ----------
 const yearElement = $("#year");
