@@ -48,9 +48,13 @@
             <span class="pill-text">Theme</span>
           </button>
 
-          <a class="pill" href="assets/Ashish_Sukumar_CV.pdf" target="_blank" rel="noopener">
+          <a class="pill" href="assets/Ashish_Resume_Robotics.pdf" target="_blank" rel="noopener">
             <span class="pill-icon" aria-hidden="true">⬇</span>
             <span class="pill-text">Resume</span>
+          </a>
+            <!-- <a class="pill" href="assets/Ashish_Resume_CS.pdf" target="_blank" rel="noopener">
+            <span class="pill-icon" aria-hidden="true">⬇</span>
+            <span class="pill-text">Resume CS</span> -->
           </a>
         </div>
       </nav>
@@ -184,8 +188,8 @@
               <li>Junior Project Technical Assistant at e-Yantra (IIT Bombay initiative): robotics workshops + development</li>
               <li>Built ROS projects including differential drive + skid-steer robots with obstacle avoidance + mapping</li>
               <li>Created fire-detection robotics system with localization, navigation, live streaming, and app control</li>
-              <li>Published 2 papers on fire detection and AI-responsive robotic systems</li>
-              <li>Excellence Award for outstanding student & 2nd place at Project Expo 2025, SRMIST</li>
+              <li>Implemented sampling-based and control-based planners (RRT, PRM*, KPIECE1, SST, AO-RRT) in OMPL</li>
+              <li>Developed classical + deep learning panorama stitching (traditional + HomographyNet)</li>
             </ul>
           </div>
         </div>
@@ -228,75 +232,6 @@
             <div class="bar"><span style="width:75%"></span></div>
           </div>
         </div>
-
-        <h3 class="subsection-title reveal">Languages & Tools</h3>
-        
-        <div class="tools-grid reveal">
-          <div class="tool-category">
-            <h4>Programming Languages</h4>
-            <div class="tool-chips">
-              <span class="tool-chip">C</span>
-              <span class="tool-chip">C++</span>
-              <span class="tool-chip">Python</span>
-              <span class="tool-chip">JavaScript</span>
-              <span class="tool-chip">SQL</span>
-              <span class="tool-chip">HTML/CSS</span>
-            </div>
-          </div>
-
-          <div class="tool-category">
-            <h4>Robotics & Simulation</h4>
-            <div class="tool-chips">
-              <span class="tool-chip">ROS / ROS2</span>
-              <span class="tool-chip">Gazebo</span>
-              <span class="tool-chip">Webots</span>
-              <span class="tool-chip">SLAM</span>
-              <span class="tool-chip">Gmapping</span>
-            </div>
-          </div>
-
-          <div class="tool-category">
-            <h4>Hardware & Embedded</h4>
-            <div class="tool-chips">
-              <span class="tool-chip">Arduino</span>
-              <span class="tool-chip">ESP32</span>
-              <span class="tool-chip">Raspberry Pi</span>
-              <span class="tool-chip">Sensors (Lidar, IMU, RGB)</span>
-            </div>
-          </div>
-
-          <div class="tool-category">
-            <h4>ML & Data</h4>
-            <div class="tool-chips">
-              <span class="tool-chip">TensorFlow</span>
-              <span class="tool-chip">PyTorch</span>
-              <span class="tool-chip">OpenCV</span>
-              <span class="tool-chip">NumPy</span>
-              <span class="tool-chip">Pandas</span>
-            </div>
-          </div>
-
-          <div class="tool-category">
-            <h4>Development Tools</h4>
-            <div class="tool-chips">
-              <span class="tool-chip">Git</span>
-              <span class="tool-chip">Linux</span>
-              <span class="tool-chip">VS Code</span>
-              <span class="tool-chip">Tableau</span>
-            </div>
-          </div>
-
-          <div class="tool-category">
-            <h4>Cloud & IoT</h4>
-            <div class="tool-chips">
-              <span class="tool-chip">ThingSpeak</span>
-              <span class="tool-chip">MQTT</span>
-              <span class="tool-chip">Firebase</span>
-              <span class="tool-chip">Oracle Cloud</span>
-              <span class="tool-chip">AWS</span>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -314,6 +249,7 @@
         </div>
 
         <div class="cards">
+          <!-- Existing projects -->
           <article class="cardx reveal" data-tags="robotics ml iot">
             <div class="cardx-top">
               <div class="tag">Robotics</div>
@@ -326,7 +262,7 @@
             </p>
             <div class="cardx-actions">
               <button class="mini openModal" data-title="Fire Aware Smart-Bot"
-                data-body="Built an end-to-end fire safety robot with sensing, localization, navigation, streaming, and mobile control. Uses Arduino Nano 33 BLE Sense for sensor fusion and ESP32 for video streaming. Implements shortest path algorithms for navigation to fire source. Presented at the 5th International Conference on IoT (ICIoT 2025).">
+                data-body="Fire-aware Smart-Bot: end-to-end safety robot with sensing, localization, navigation, streaming, and mobile control. Hardware: Arduino Nano 33 BLE Sense + ESP32. Focus: real-time detection + response pipeline with shortest-path navigation and live video feed.">
                 Details
               </button>
             </div>
@@ -340,11 +276,11 @@
             <h3>Fire Prediction using Color</h3>
             <p>
               Neural network trained on fire/non-fire datasets using color sensor patterns for early hazard prediction,
-              demonstrating ML + IoT integration. Published in IJERCSE.
+              demonstrating ML + IoT integration.
             </p>
             <div class="cardx-actions">
               <button class="mini openModal" data-title="Fire Prediction using Color"
-                data-body="Trained a neural network to classify fire risk from sensor color patterns. The model analyzes RGB values from APDS-9960 color sensors to predict fire presence before visual flames appear. Demonstrates integration of machine learning with IoT hardware for proactive safety systems. Published in IJERCSE, March 2025.">
+                data-body="Fire Prediction using Color: ML model trained on fire/non-fire patterns from a color sensor to predict hazard early. Focus: lightweight edge ML + IoT integration for proactive detection.">
                 Details
               </button>
             </div>
@@ -362,7 +298,7 @@
             </p>
             <div class="cardx-actions">
               <button class="mini openModal" data-title="ROS Autonomous Navigation Stack"
-                data-body="Built a full navigation pipeline in Gazebo simulation. Implemented differential drive and skid-steer robot models with obstacle avoidance and mapping using SLAM and Gmapping. Utilized ROS publisher-subscriber models with lidar and odometry sensors for localization and path planning. Part of ROS Mentorship Program at RigBetel Labs.">
+                data-body="ROS Autonomous Navigation Stack: Gazebo simulation for skid-steer robot with SLAM (Gmapping), localization, and navigation. Integrated lidar + odometry; ROS pub-sub design.">
                 Details
               </button>
             </div>
@@ -376,15 +312,180 @@
             <h3>Air Quality Analyzer</h3>
             <p>
               IoT system with ESP8266 + MQ135 sensor and cloud visualization (ThingSpeak) for real-time
-              air quality monitoring and analysis.
+              air quality monitoring.
             </p>
             <div class="cardx-actions">
               <button class="mini openModal" data-title="Air Quality Analyzer"
-                data-body="Developed an IoT-based air quality monitoring system using ESP8266 microcontroller and MQ135 gas sensor. Real-time data is collected and transmitted to ThingSpeak cloud platform for visualization and analysis. Enables remote monitoring of air quality parameters including CO2, NH3, and other harmful gases.">
+                data-body="Air Quality Analyzer: ESP8266 + MQ135 with ThingSpeak cloud dashboard for real-time monitoring. Focus: sensing + Wi-Fi telemetry + visualization.">
                 Details
               </button>
             </div>
           </article>
+
+          <!-- NEW: Motion Planning / OMPL / TAMP -->
+          <article class="cardx reveal" data-tags="robotics">
+            <div class="cardx-top">
+              <div class="tag">Robotics</div>
+              <div class="tag ghost">Motion Planning</div>
+            </div>
+            <h3>Motion Planning Fundamentals (Project 2)</h3>
+            <p>
+              Implemented a custom Rapidly-exploring Tree Planner (RTP) in C++ with collision checking for point + rotated square robots,
+              tested on 10-link and 20-link manipulators.
+            </p>
+            <div class="cardx-actions">
+              <button class="mini openModal" data-title="Motion Planning Fundamentals (Project 2)"
+                data-body="Theoretical: Bug1/Bug2, A* heuristics (admissibility/consistency), C-space obstacles, visibility graphs.\n\nImplementation (C++): Built RTP (Rapidly-exploring Tree Planner) from scratch. Developed collision checkers isValidPoint() for point robots and isValidSquare() for rotated square robots. Tested on 10-link and 20-link manipulators.\n\nBenchmark: RTP vs RRT vs EST — RTP used 233 states for the 20-link case but had slower runtime (state efficiency vs speed tradeoff).">
+                Details
+              </button>
+            </div>
+          </article>
+
+          <article class="cardx reveal" data-tags="robotics">
+            <div class="cardx-top">
+              <div class="tag">Robotics</div>
+              <div class="tag ghost">Sampling-Based</div>
+            </div>
+            <h3>Sampling-Based Planning (Project 3)</h3>
+            <p>
+              Implemented planning for a chain-box robot in a 7-DOF state space (ℝ²×S¹×S⁴) with custom validity checks,
+              tested RRTConnect and PRM* across challenging scenarios.
+            </p>
+            <div class="cardx-actions">
+              <button class="mini openModal" data-title="Sampling-Based Planning (Project 3)"
+                data-body="Key concepts: PRM vs Visibility Graphs; configuration space topology (SE(3), SO(3)).\n\nChain-box robot: 7-DOF state (x, y, θ, q0, q1, q2, q3) = ℝ²×S¹×S⁴.\n\nImplementation: Custom validity checker with self-collision detection (links cannot intersect).\n\nScenario 1 (Narrow passages): RRTConnect with range=0.9728, solved in ~20s.\nScenario 2 (Max clearance): PRM* with clearance optimization objective.\n\nBenchmarking: Compared PRM sampling strategies — Uniform, Gaussian, Obstacle-Based, Bridge Test.">
+                Details
+              </button>
+            </div>
+          </article>
+
+          <article class="cardx reveal" data-tags="robotics">
+            <div class="cardx-top">
+              <div class="tag">Robotics</div>
+              <div class="tag ghost">Control-Based</div>
+            </div>
+            <h3>Control-Based Planning (Project 4)</h3>
+            <p>
+              Compared kinodynamic planners on Pendulum and Car systems; implemented AO-RRT from scratch and benchmarked
+              KPIECE1, SST, and AO-RRT.
+            </p>
+            <div class="cardx-actions">
+              <button class="mini openModal" data-title="Control-Based Planning (Project 4)"
+                data-body="Pendulum system: State (θ, θ̇), control torque τ. Tested RRT, EST, KPIECE1 — KPIECE1 fastest, RRT longest paths, EST moderate.\n\nCar (kinodynamic): 4D state [x, y, θ, v], 2D control [acceleration a, angular velocity ω]. Implemented AO-RRT (Asymptotically Optimal RRT) from scratch.\n\nComparison: KPIECE1 (fastest) vs SST (sparse, pruning) vs AO-RRT (shortest paths but slowest).\nDynamics: ẋ = v cosθ, ẏ = v sinθ, θ̇ = ω, v̇ = a.">
+                Details
+              </button>
+            </div>
+          </article>
+
+          <article class="cardx reveal" data-tags="robotics">
+            <div class="cardx-top">
+              <div class="tag">Robotics</div>
+              <div class="tag ghost">TAMP</div>
+            </div>
+            <h3>TAMP Framework (Final Project)</h3>
+            <p>
+              Built a full TAMP stack: PDDL → Pyperplan → OMPL → Genesis simulator for a Franka Panda,
+              with closed-loop re-planning and predicate extraction.
+            </p>
+            <div class="cardx-actions">
+              <button class="mini openModal" data-title="TAMP Framework (Final Project)"
+                data-body="System architecture: PDDL symbolic planning → Pyperplan → OMPL motion planning → Genesis simulator.\nRobot: Franka Emika Panda (7-DOF).\n\nAchievements:\n• Goal 1: two 3-block towers (100% success)\n• Goal 2: 5-block tower (100% success)\n• Goal 3: tallest tower challenge (7 blocks max before toppling, with re-planning)\n• Goal 4.1: pentagon tower (2-layer bridged structure) — stability challenge\n• Goal 4.2: directional adjacency grid (2×2 base + 2 stacked) using ADJACENT-X/Y predicates\n\nTechnical highlights:\n• Predicates: ON, ONTABLE, CLEAR, HOLDING, HANDEMPTY\n• Closed-loop re-grounding: re-plans on failure\n• Collision-free motion primitives with attached object handling">
+                Details
+              </button>
+            </div>
+          </article>
+
+          <!-- NEW: Computer Vision -->
+          <article class="cardx reveal" data-tags="ml">
+            <div class="cardx-top">
+              <div class="tag">ML</div>
+              <div class="tag ghost">Computer Vision</div>
+            </div>
+            <h3>Pb-Lite Boundary Detection (HW0)</h3>
+            <p>
+              Built Pb-Lite from scratch with 112-filter banks, texton/brightness/color clustering, half-disk χ² gradients,
+              and fusion with Sobel+Canny for robust boundaries.
+            </p>
+            <div class="cardx-actions">
+              <button class="mini openModal" data-title="Pb-Lite Boundary Detection (HW0)"
+                data-body="Filter banks (112): DoG 32, Leung–Malik 48, Gabor 32.\nClustering: Textons K=64, Brightness K=16, Color (Lab) K=16.\nGradients: Half-disk masks (3 radii × 8 orientations × 2 sides = 48), χ² distance for texture (Tm), brightness (Bm), color (Cm).\nFusion: Pb-Lite = (Tm + Bm + Cm)/3 × (0.5×Sobel + 0.5×Canny).\nResult: Suppressed texture false positives and outperformed Sobel/Canny qualitatively.">
+                Details
+              </button>
+            </div>
+          </article>
+
+          <article class="cardx reveal" data-tags="ml">
+            <div class="cardx-top">
+              <div class="tag">ML</div>
+              <div class="tag ghost">Deep Learning</div>
+            </div>
+            <h3>CIFAR-10 Classification (HW0 Phase 2)</h3>
+            <p>
+              Implemented CNN, ResNet, ResNeXt, DenseNet; best result: ResNet (92K params) with 84% test accuracy.
+              Used AdamW + OneCycleLR over 50 epochs.
+            </p>
+            <div class="cardx-actions">
+              <button class="mini openModal" data-title="CIFAR-10 Classification (HW0 Phase 2)"
+                data-body="Architectures:\n• Baseline CNN: 18K params, 70% accuracy (overfitting)\n• ResNet: 92K params, 84% accuracy (best)\n• ResNeXt: 128K params, 75% accuracy (cardinality=8)\n• DenseNet: 133K params, 82% accuracy (growth rate=12)\n\nTraining: 50 epochs, AdamW optimizer, OneCycleLR.\nFinding: ResNet performed best on CIFAR-10; ResNeXt/DenseNet showed more overfitting on small dataset.">
+                Details
+              </button>
+            </div>
+          </article>
+
+          <article class="cardx reveal" data-tags="ml">
+            <div class="cardx-top">
+              <div class="tag">ML</div>
+              <div class="tag ghost">Calibration</div>
+            </div>
+            <h3>Camera Calibration (AutoCalib • HW1)</h3>
+            <p>
+              Implemented Zhang’s calibration from scratch: homographies, intrinsics, extrinsics (Rodrigues),
+              nonlinear refinement with radial distortion.
+            </p>
+            <div class="cardx-actions">
+              <button class="mini openModal" data-title="Camera Calibration (AutoCalib • HW1)"
+                data-body="Method: Zhang’s flexible calibration from scratch.\nPipeline: corner detection (sub-pixel), normalized DLT homography per view, intrinsics from B=K^-T K^-1 constraints, extrinsics via Rodrigues, nonlinear refinement with radial distortion (k1,k2).\n\nResults:\n• 0.509 px RMS error (Rodrigues) vs 0.634 px (direct rotation matrix)\n• Parameters reduced: 163 → 85\n• Faster convergence: 128+ → 9 iterations\nDistortion: x' = x(1 + k1 r^2 + k2 r^4).">
+                Details
+              </button>
+            </div>
+          </article>
+
+          <article class="cardx reveal" data-tags="robotics ml">
+            <div class="cardx-top">
+              <div class="tag">Robotics</div>
+              <div class="tag ghost">Vision</div>
+            </div>
+            <h3>MyAutoPano Phase 1 (Traditional Stitching)</h3>
+            <p>
+              Classical panorama stitching with cylindrical projection, ANMS, SSD matching + Lowe ratio,
+              RANSAC homography, and distance transform blending.
+            </p>
+            <div class="cardx-actions">
+              <button class="mini openModal" data-title="MyAutoPano Phase 1 (Traditional Stitching)"
+                data-body="Projection: Cylindrical (f = 1.1w) for wide FOV (90–135°).\nPipeline: cylindrical warping; Shi-Tomasi corners (150); ANMS top 100; 41×41 patch descriptors → blur → 8×8 subsample → normalize; SSD matching + Lowe ratio (τ=0.7); RANSAC homography (thr=5px, 2000 iters); sequential propagation; distance transform blending.\n\nResult: 100% image inclusion (Set3: 9/9) vs hierarchical (5/9).">
+                Details
+              </button>
+            </div>
+          </article>
+
+          <article class="cardx reveal" data-tags="ml">
+            <div class="cardx-top">
+              <div class="tag">ML</div>
+              <div class="tag ghost">Deep Learning</div>
+            </div>
+            <h3>MyAutoPano Phase 2 (Deep Learning HomographyNet)</h3>
+            <p>
+              Supervised + unsupervised HomographyNet with TensorDLT + STN warping; hybrid stitching combining classical
+              features with DL homography estimation.
+            </p>
+            <div class="cardx-actions">
+              <button class="mini openModal" data-title="MyAutoPano Phase 2 (Deep Learning HomographyNet)"
+                data-body="Supervised HomographyNet:\n• Dataset: 50k synthetic MS-COCO pairs (128×128 patches, ρ=32px)\n• Net: 8 conv layers (64→512) + 2 FC → 8D H4Pt output\n• Loss: MSE on H4Pt\n• Training: AdamW + OneCycleLR (max LR 5e-3 at epoch 12)\n• Result: 8.7 px validation MAE\n\nUnsupervised HomographyNet:\n• Loss: photometric consistency (Charbonnier) + valid pixel masking\n• Components: TensorDLT + STN differentiable warping\n• Result: 17.4 px validation MAE\n\nHybrid stitching: classical features (Shi-Tomasi + SSD) + DL homography; all-pairs photometric ordering. Noted domain mismatch issues (MS-COCO vs nature scenes).">
+                Details
+              </button>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
@@ -444,7 +545,7 @@
         <div class="grid-2">
           <div class="panel reveal">
             <h3>Let's talk</h3>
-            <p>I'm actively seeking opportunities in robotics engineering, embedded systems, and ML/IoT applications. 
+            <p>I'm actively seeking opportunities in robotics engineering, embedded systems, and ML/IoT applications.
             Excited to work on projects involving autonomous navigation, SLAM, sensor fusion, and intelligent robotic systems.</p>
 
             <div class="contact-list">
@@ -514,8 +615,6 @@
       </div>
     </div>
   </div>
-
-
 
   <!-- Toast -->
   <div class="toast" id="toast" aria-live="polite" aria-atomic="true"></div>
