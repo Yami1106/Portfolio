@@ -237,6 +237,79 @@ section{ scroll-margin-top: calc(var(--header-h) + 22px); }
   box-shadow: 0 0 25px rgba(124,58,237,.3), 0 12px 30px rgba(0,0,0,.2);
 }
 
+/* ── Resume dropdown ── */
+.resume-dropdown{
+  position:relative;
+  display:inline-block;
+}
+.resume-dropdown .pill{
+  cursor:pointer;
+  color:#e0d4ff;
+}
+[data-theme="light"] .resume-dropdown .pill{
+  color:#5b21b6;
+}
+.pill-caret{
+  font-size:10px;
+  opacity:.7;
+  transition: transform .2s ease;
+}
+.resume-dropdown.open .pill-caret{
+  transform: rotate(180deg);
+}
+.resume-menu{
+  position:absolute;
+  top:calc(100% + 8px);
+  right:0;
+  min-width:220px;
+  background: var(--bg2);
+  border:1px solid var(--border);
+  border-radius:14px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.35);
+  padding:6px;
+  opacity:0;
+  visibility:hidden;
+  transform: translateY(-8px) scale(.96);
+  transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+  z-index:999;
+  backdrop-filter: blur(16px);
+}
+.resume-dropdown.open .resume-menu{
+  opacity:1;
+  visibility:visible;
+  transform: translateY(0) scale(1);
+}
+.resume-option{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:11px 14px;
+  border-radius:10px;
+  font-size:14px;
+  font-weight:600;
+  color:#c4b5fd;
+  transition: background .15s ease, color .15s ease;
+  white-space:nowrap;
+}
+.resume-option:hover{
+  background: var(--card2);
+  color:#e0d4ff;
+}
+[data-theme="light"] .resume-option{
+  color:#5b21b6;
+}
+[data-theme="light"] .resume-option:hover{
+  color:#7c3aed;
+}
+[data-theme="light"] .resume-menu{
+  background:#ffffff;
+  border-color:rgba(0,0,0,.12);
+  box-shadow: 0 20px 50px rgba(0,0,0,.15);
+}
+.resume-ico{
+  font-size:16px;
+}
+
 .mini{
   display:inline-flex;
   padding:9px 12px;

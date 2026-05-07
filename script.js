@@ -38,6 +38,23 @@ $$(".nav-link").forEach(a => {
   });
 });
 
+// ---------- Resume dropdown ----------
+const resumeDropdown = $(".resume-dropdown");
+if (resumeDropdown) {
+  const resumeBtn = $(".pill", resumeDropdown);
+  resumeBtn?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    resumeDropdown.classList.toggle("open");
+    resumeBtn.setAttribute("aria-expanded", resumeDropdown.classList.contains("open"));
+  });
+  document.addEventListener("click", (e) => {
+    if (!resumeDropdown.contains(e.target)) {
+      resumeDropdown.classList.remove("open");
+      resumeBtn?.setAttribute("aria-expanded", "false");
+    }
+  });
+}
+
 // ---------- Theme toggle ----------
 const themeToggle = $("#themeToggle");
 const storedTheme = localStorage.getItem("theme");

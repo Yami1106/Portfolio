@@ -48,14 +48,21 @@
             <span class="pill-text">Theme</span>
           </button>
 
-          <a class="pill" href="assets/Ashish_Resume_Robotics.pdf" target="_blank" rel="noopener">
-            <span class="pill-icon" aria-hidden="true">⬇</span>
-            <span class="pill-text">Resume</span>
-          </a>
-            <!-- <a class="pill" href="assets/Ashish_Resume_CS.pdf" target="_blank" rel="noopener">
-            <span class="pill-icon" aria-hidden="true">⬇</span>
-            <span class="pill-text">Resume CS</span> -->
-          </a>
+          <div class="resume-dropdown">
+            <button class="pill" type="button" aria-haspopup="true" aria-expanded="false">
+              <span class="pill-icon" aria-hidden="true">⬇</span>
+              <span class="pill-text">Resume</span>
+              <span class="pill-caret" aria-hidden="true">&#9662;</span>
+            </button>
+            <div class="resume-menu" role="menu">
+              <a class="resume-option" href="assets/Robotics_Resume.pdf" target="_blank" rel="noopener" role="menuitem">
+                <span class="resume-ico">🤖</span> Robotics Resume
+              </a>
+              <a class="resume-option" href="assets/CV_Resume.pdf" target="_blank" rel="noopener" role="menuitem">
+                <span class="resume-ico">👁</span> Computer Vision Resume
+              </a>
+            </div>
+          </div>
         </div>
       </nav>
     </div>
@@ -79,7 +86,8 @@
 
           <p class="lead reveal">
             Robotics engineering graduate student with hands-on experience in ROS, SLAM, path planning,
-            embedded systems, and ML-driven safety applications—bridging simulation to real-world hardware.
+            embedded systems, 3D computer vision (SfM, NeRF, VIO), and ML-driven perception—bridging
+            simulation to real-world hardware.
           </p>
 
           <div class="hero-cta reveal">
@@ -95,7 +103,7 @@
 
           <div class="hero-metrics reveal" role="list">
             <div class="metric" role="listitem">
-              <div class="metric-k" data-count="6">0</div>
+              <div class="metric-k" data-count="10">0</div>
               <div class="metric-v">Robotics builds</div>
             </div>
             <div class="metric" role="listitem">
@@ -179,6 +187,8 @@
               <span class="chip">Path Planning</span>
               <span class="chip">Embedded + Sensors</span>
               <span class="chip">IoT + ML</span>
+              <span class="chip">3D Vision (SfM / NeRF)</span>
+              <span class="chip">Sensor Fusion / VIO</span>
             </div>
           </div>
 
@@ -190,6 +200,9 @@
               <li>Created fire-detection robotics system with localization, navigation, live streaming, and app control</li>
               <li>Implemented sampling-based and control-based planners (RRT, PRM*, KPIECE1, SST, AO-RRT) in OMPL</li>
               <li>Developed classical + deep learning panorama stitching (traditional + HomographyNet)</li>
+              <li>Built NeRF from scratch — neural 3D scene reconstruction achieving 27.4 dB PSNR</li>
+              <li>Implemented full SfM pipeline and visual-inertial odometry (S-MSCKF + deep VIO)</li>
+              <li>Created autonomous driving visualization system: dashcam to 3D scene with collision prediction</li>
             </ul>
           </div>
         </div>
@@ -244,6 +257,7 @@
             <button class="filter active" data-filter="all" role="tab" aria-selected="true">All</button>
             <button class="filter" data-filter="robotics" role="tab">Robotics</button>
             <button class="filter" data-filter="ml" role="tab">ML</button>
+            <button class="filter" data-filter="cv" role="tab">Computer Vision</button>
             <button class="filter" data-filter="iot" role="tab">IoT</button>
           </div>
         </div>
@@ -396,7 +410,7 @@
           </article>
 
           <!-- NEW: Computer Vision -->
-          <article class="cardx reveal" data-tags="ml">
+          <article class="cardx reveal" data-tags="ml cv">
             <div class="cardx-top">
               <div class="tag">ML</div>
               <div class="tag ghost">Computer Vision</div>
@@ -432,7 +446,7 @@
             </div>
           </article>
 
-          <article class="cardx reveal" data-tags="ml">
+          <article class="cardx reveal" data-tags="ml cv">
             <div class="cardx-top">
               <div class="tag">ML</div>
               <div class="tag ghost">Calibration</div>
@@ -450,7 +464,7 @@
             </div>
           </article>
 
-          <article class="cardx reveal" data-tags="robotics ml">
+          <article class="cardx reveal" data-tags="robotics ml cv">
             <div class="cardx-top">
               <div class="tag">Robotics</div>
               <div class="tag ghost">Vision</div>
@@ -468,7 +482,7 @@
             </div>
           </article>
 
-          <article class="cardx reveal" data-tags="ml">
+          <article class="cardx reveal" data-tags="ml cv">
             <div class="cardx-top">
               <div class="tag">ML</div>
               <div class="tag ghost">Deep Learning</div>
@@ -481,6 +495,83 @@
             <div class="cardx-actions">
               <button class="mini openModal" data-title="MyAutoPano Phase 2 (Deep Learning HomographyNet)"
                 data-body="Supervised HomographyNet:\n• Dataset: 50k synthetic MS-COCO pairs (128×128 patches, ρ=32px)\n• Net: 8 conv layers (64→512) + 2 FC → 8D H4Pt output\n• Loss: MSE on H4Pt\n• Training: AdamW + OneCycleLR (max LR 5e-3 at epoch 12)\n• Result: 8.7 px validation MAE\n\nUnsupervised HomographyNet:\n• Loss: photometric consistency (Charbonnier) + valid pixel masking\n• Components: TensorDLT + STN differentiable warping\n• Result: 17.4 px validation MAE\n\nHybrid stitching: classical features (Shi-Tomasi + SSD) + DL homography; all-pairs photometric ordering. Noted domain mismatch issues (MS-COCO vs nature scenes).">
+                Details
+              </button>
+            </div>
+          </article>
+
+          <!-- ========== NEW PROJECTS ========== -->
+
+          <article class="cardx reveal" data-tags="cv ml">
+            <div class="cardx-top">
+              <div class="tag">Computer Vision</div>
+              <div class="tag ghost">3D Reconstruction</div>
+            </div>
+            <h3>Structure from Motion — Buildings in Minutes</h3>
+            <p>
+              Reconstructed the 3D point cloud of a building from just 5 photographs — estimating camera positions, triangulating
+              thousands of 3D points, and refining everything with bundle adjustment. A full SfM pipeline built from scratch.
+            </p>
+            <div class="cardx-actions">
+              <button class="mini openModal" data-title="Structure from Motion — Buildings in Minutes"
+                data-body="Built a complete Structure from Motion pipeline from scratch to reconstruct a 3D point cloud from 5 images of Unity Hall at WPI.\n\nPipeline stages:\n• SIFT feature extraction and matching across all image pairs\n• Fundamental matrix estimation with Hartley normalization and SVD rank-2 enforcement\n• RANSAC outlier rejection — pair 3-4 achieved 96% inlier ratio (1137/1183 matches)\n• Essential matrix decomposition with cheirality check to resolve 4 candidate camera poses\n• Linear triangulation of 592 3D points, refined to 562 via nonlinear optimization (minimizing reprojection error)\n• PnP + RANSAC for registering additional cameras into the world frame\n• Bundle adjustment over 1318 reconstructed points across 4 cameras for global consistency\n\nKey results:\n• Nonlinear triangulation reduced reprojection error significantly over linear baseline\n• Camera 3 rejected due to insufficient inliers — demonstrating PnP's dependence on correspondence quality\n• Final dense point cloud with optimized camera poses after bundle adjustment">
+                Details
+              </button>
+            </div>
+          </article>
+
+          <article class="cardx reveal" data-tags="cv ml">
+            <div class="cardx-top">
+              <div class="tag">Deep Learning</div>
+              <div class="tag ghost">Neural Rendering</div>
+            </div>
+            <h3>NeRF — Neural Radiance Fields from Scratch</h3>
+            <p>
+              Taught a neural network to understand 3D space from 2D photos. The model learns to render photorealistic novel views
+              by predicting color and density at every point in a scene — achieving 27.4 dB PSNR on synthetic datasets and trained
+              on custom real-world captures.
+            </p>
+            <div class="cardx-actions">
+              <button class="mini openModal" data-title="NeRF — Neural Radiance Fields from Scratch"
+                data-body="Implemented the complete NeRF pipeline from scratch including ray generation, positional encoding, hierarchical (coarse + fine) sampling, and volume rendering.\n\nArchitecture and training:\n• 5D input: 3D position (x,y,z) + 2D viewing direction (θ,φ) → outputs RGB color + volume density σ\n• Positional encoding with sinusoidal functions at multiple frequencies to capture high-frequency scene detail\n• Coarse network for uniform density estimation → fine network with importance sampling near surfaces\n• Volume rendering: C(r) = Σ Tᵢ(1-exp(-σᵢδᵢ))cᵢ with transmittance weighting\n\nResults:\n• Lego dataset: 100k iterations, PSNR 27.42 dB, SSIM 0.9084 — sharp edges and detailed reconstruction\n• Ship dataset: 70k iterations, PSNR 25.75 dB, SSIM 0.7991\n• Custom dataset (Samsung S23, 78 images via COLMAP): loss fluctuated 0.20-0.22, PSNR 20.13 dB\n• Second custom dataset (341 images): converged to loss 0.006, PSNR 19.65 dB\n\nAblation study:\n• Without positional encoding: output collapsed to pure white — MLP cannot learn high-frequency detail from raw coordinates\n• Fix: replaced ReLU with Softplus activation to prevent dead neurons during early training\n• Background correction: accuracy map + white fill for unabsorbed rays">
+                Details
+              </button>
+            </div>
+          </article>
+
+          <article class="cardx reveal" data-tags="cv robotics ml">
+            <div class="cardx-top">
+              <div class="tag">Computer Vision</div>
+              <div class="tag ghost">Autonomous Driving</div>
+            </div>
+            <h3>Einstein Vision — Dashcam to 3D World</h3>
+            <p>
+              Converts raw dashcam video into a full 3D scene understanding: detecting vehicles, pedestrians, lanes, traffic signals,
+              and road signs — then rendering everything in Blender with motion state estimation, brake light detection, and
+              collision prediction.
+            </p>
+            <div class="cardx-actions">
+              <button class="mini openModal" data-title="Einstein Vision — Dashcam to 3D World"
+                data-body="End-to-end perception-to-visualization pipeline for autonomous driving, processing 13 real-world driving sequences from a Tesla Model S dashcam.\n\nPerception stack:\n• YOLOv8 + ByteTracker for vehicle and pedestrian detection and tracking\n• HybridNets + classical CV for lane detection with solid/dashed and white/yellow classification\n• YOLO-World (open-vocabulary) for stop signs and speed limits + EasyOCR for numeric extraction\n• HSV color thresholding for traffic light state classification (red/yellow/green)\n• Depth Anything V2 (ViT-L encoder) for monocular depth estimation\n• YOLOv8-Pose for pedestrian skeleton reconstruction\n\nVehicle state estimation:\n• RAFT optical flow for motion detection between consecutive frames\n• Sampson distance to separate ego-motion from independent object motion\n• Homography-based second-layer verification\n• Brake light detection via HSV analysis of rear bounding box region\n\nExtra credit — Collision prediction:\n• 3-phase approach: bounding box overlap → depth similarity → mutual motion check\n• Vehicles color-coded: green (moving), blue (parked), yellow/orange (collision risk)\n\nRendering: Full Blender pipeline with procedural geometry, emission shaders for signals, and 3D vehicle models">
+                Details
+              </button>
+            </div>
+          </article>
+
+          <article class="cardx reveal" data-tags="cv robotics ml">
+            <div class="cardx-top">
+              <div class="tag">Robotics</div>
+              <div class="tag ghost">Sensor Fusion</div>
+            </div>
+            <h3>Visual-Inertial Odometry — Classical + Deep</h3>
+            <p>
+              Implemented both a classical Stereo Multi-State Constraint Kalman Filter (S-MSCKF) achieving 0.12m RMSE on EuRoC,
+              and deep learning VIO networks (vision-only, IMU-only, fused) with gated sensor fusion — reducing trajectory error
+              to 1.18m after global optimization.
+            </p>
+            <div class="cardx-actions">
+              <button class="mini openModal" data-title="Visual-Inertial Odometry — Classical + Deep"
+                data-body="Two-phase project combining classical filter-based and deep learning approaches to visual-inertial odometry.\n\nPhase 1 — Classical S-MSCKF:\n• Stereo Multi-State Constraint Kalman Filter on EuRoC MH_01_easy sequence\n• IMU error-state propagation with 3rd-order matrix exponential + RK4 nominal integration\n• Sliding window of camera poses with multi-view feature constraints\n• Gravity and bias initialization from first 200 IMU samples\n• Joseph-form covariance update for numerical stability\n• Result: 0.1201m RMSE ATE after SE(3) alignment with Vicon ground truth\n\nPhase 2 — Deep Learning VIO:\n• Custom synthetic dataset: 20 scenes from 13 trajectory shapes in Blender, 10k poses per scene at 100Hz\n• Three networks trained in PyTorch:\n  — Vision-only: multi-scale 3-stream CNN encoder (fine/mid/coarse) → translation + quaternion rotation\n  — IMU-only: bidirectional LSTM with temporal attention → translation (rotation from gyro integration)\n  — Visual-Inertial: learned sigmoid gate fusing vision + IMU features: g·fᵥ + (1-g)·fᵢ\n• Loss: weighted MSE (w_z=4.0 for altitude) + quaternion geodesic + 5-step rollout penalty\n• Dead-reckoning ATE: Vision 4.71m, IMU 2.73m, VI 1.94m\n• After global optimization (loop closure + smoothness): VI achieved 1.18m — 39% improvement\n\nAblation: fully learned rotation with noisy IMU, 6D rotation representation, and depth auxiliary head — showed precomputed gyro rotation is a powerful prior (3.69m vs 1.94m without it)">
                 Details
               </button>
             </div>
