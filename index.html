@@ -279,6 +279,7 @@
                 data-body="Fire-aware Smart-Bot: end-to-end safety robot with sensing, localization, navigation, streaming, and mobile control. Hardware: Arduino Nano 33 BLE Sense + ESP32. Focus: real-time detection + response pipeline with shortest-path navigation and live video feed.">
                 Details
               </button>
+              <a class="mini ghost" href="https://github.com/Yami1106/Major-Project" target="_blank" rel="noopener">View Code →</a>
             </div>
           </article>
 
@@ -297,6 +298,7 @@
                 data-body="Fire Prediction using Color: ML model trained on fire/non-fire patterns from a color sensor to predict hazard early. Focus: lightweight edge ML + IoT integration for proactive detection.">
                 Details
               </button>
+              <a class="mini ghost" href="https://github.com/Yami1106/Fire-Prediction-using-colour" target="_blank" rel="noopener">View Code →</a>
             </div>
           </article>
 
@@ -315,6 +317,7 @@
                 data-body="ROS Autonomous Navigation Stack: Gazebo simulation for skid-steer robot with SLAM (Gmapping), localization, and navigation. Integrated lidar + odometry; ROS pub-sub design.">
                 Details
               </button>
+              <a class="mini ghost" href="https://github.com/Yami1106/ros" target="_blank" rel="noopener">View Code →</a>
             </div>
           </article>
 
@@ -333,6 +336,7 @@
                 data-body="Air Quality Analyzer: ESP8266 + MQ135 with ThingSpeak cloud dashboard for real-time monitoring. Focus: sensing + Wi-Fi telemetry + visualization.">
                 Details
               </button>
+              <a class="mini ghost" href="https://github.com/Yami1106/Air_Quality_Analyzer" target="_blank" rel="noopener">View Code →</a>
             </div>
           </article>
 
@@ -342,16 +346,17 @@
               <div class="tag">Robotics</div>
               <div class="tag ghost">Motion Planning</div>
             </div>
-            <h3>Motion Planning Fundamentals (Project 2)</h3>
+            <h3>Custom RTP Motion Planner</h3>
             <p>
-              Implemented a custom Rapidly-exploring Tree Planner (RTP) in C++ with collision checking for point + rotated square robots,
-              tested on 10-link and 20-link manipulators.
+              Built a Rapidly-exploring Tree Planner (RTP) from scratch in C++ with collision checking for point + rotated square robots,
+              benchmarked against RRT and EST on 10-link and 20-link manipulators.
             </p>
             <div class="cardx-actions">
-              <button class="mini openModal" data-title="Motion Planning Fundamentals (Project 2)"
+              <button class="mini openModal" data-title="Custom RTP Motion Planner"
                 data-body="Theoretical: Bug1/Bug2, A* heuristics (admissibility/consistency), C-space obstacles, visibility graphs.\n\nImplementation (C++): Built RTP (Rapidly-exploring Tree Planner) from scratch. Developed collision checkers isValidPoint() for point robots and isValidSquare() for rotated square robots. Tested on 10-link and 20-link manipulators.\n\nBenchmark: RTP vs RRT vs EST — RTP used 233 states for the 20-link case but had slower runtime (state efficiency vs speed tradeoff).">
                 Details
               </button>
+              <a class="mini ghost" href="https://github.com/Yami1106/RTP_custom_planner" target="_blank" rel="noopener">View Code →</a>
             </div>
           </article>
 
@@ -360,16 +365,17 @@
               <div class="tag">Robotics</div>
               <div class="tag ghost">Sampling-Based</div>
             </div>
-            <h3>Sampling-Based Planning (Project 3)</h3>
+            <h3>Chainbox Robot — Sampling-Based Planner</h3>
             <p>
-              Implemented planning for a chain-box robot in a 7-DOF state space (ℝ²×S¹×S⁴) with custom validity checks,
-              tested RRTConnect and PRM* across challenging scenarios.
+              Planned motion for a 7-DOF chain-box robot (ℝ²×S¹×S⁴) with custom self-collision detection,
+              comparing RRTConnect vs PRM* across narrow-passage and max-clearance scenarios.
             </p>
             <div class="cardx-actions">
-              <button class="mini openModal" data-title="Sampling-Based Planning (Project 3)"
+              <button class="mini openModal" data-title="Chainbox Robot — Sampling-Based Planner"
                 data-body="Key concepts: PRM vs Visibility Graphs; configuration space topology (SE(3), SO(3)).\n\nChain-box robot: 7-DOF state (x, y, θ, q0, q1, q2, q3) = ℝ²×S¹×S⁴.\n\nImplementation: Custom validity checker with self-collision detection (links cannot intersect).\n\nScenario 1 (Narrow passages): RRTConnect with range=0.9728, solved in ~20s.\nScenario 2 (Max clearance): PRM* with clearance optimization objective.\n\nBenchmarking: Compared PRM sampling strategies — Uniform, Gaussian, Obstacle-Based, Bridge Test.">
                 Details
               </button>
+              <a class="mini ghost" href="https://github.com/Yami1106/Chainbox_robot_planner" target="_blank" rel="noopener">View Code →</a>
             </div>
           </article>
 
@@ -378,16 +384,17 @@
               <div class="tag">Robotics</div>
               <div class="tag ghost">Control-Based</div>
             </div>
-            <h3>Control-Based Planning (Project 4)</h3>
+            <h3>Kinodynamic Planning: AO-RRT from Scratch</h3>
             <p>
-              Compared kinodynamic planners on Pendulum and Car systems; implemented AO-RRT from scratch and benchmarked
-              KPIECE1, SST, and AO-RRT.
+              Implemented AO-RRT (Asymptotically Optimal RRT) from scratch for Car and Pendulum systems;
+              benchmarked against KPIECE1 and SST on path quality vs. solve time.
             </p>
             <div class="cardx-actions">
-              <button class="mini openModal" data-title="Control-Based Planning (Project 4)"
+              <button class="mini openModal" data-title="Kinodynamic Planning: AO-RRT from Scratch"
                 data-body="Pendulum system: State (θ, θ̇), control torque τ. Tested RRT, EST, KPIECE1 — KPIECE1 fastest, RRT longest paths, EST moderate.\n\nCar (kinodynamic): 4D state [x, y, θ, v], 2D control [acceleration a, angular velocity ω]. Implemented AO-RRT (Asymptotically Optimal RRT) from scratch.\n\nComparison: KPIECE1 (fastest) vs SST (sparse, pruning) vs AO-RRT (shortest paths but slowest).\nDynamics: ẋ = v cosθ, ẏ = v sinθ, θ̇ = ω, v̇ = a.">
                 Details
               </button>
+              <a class="mini ghost" href="https://github.com/Yami1106/Dynamic-Planner-" target="_blank" rel="noopener">View Code →</a>
             </div>
           </article>
 
@@ -396,16 +403,17 @@
               <div class="tag">Robotics</div>
               <div class="tag ghost">TAMP</div>
             </div>
-            <h3>TAMP Framework (Final Project)</h3>
+            <h3>TAMP Framework: PDDL → OMPL → Franka Panda</h3>
             <p>
               Built a full TAMP stack: PDDL → Pyperplan → OMPL → Genesis simulator for a Franka Panda,
               with closed-loop re-planning and predicate extraction.
             </p>
             <div class="cardx-actions">
-              <button class="mini openModal" data-title="TAMP Framework (Final Project)"
+              <button class="mini openModal" data-title="TAMP Framework: PDDL → OMPL → Franka Panda"
                 data-body="System architecture: PDDL symbolic planning → Pyperplan → OMPL motion planning → Genesis simulator.\nRobot: Franka Emika Panda (7-DOF).\n\nAchievements:\n• Goal 1: two 3-block towers (100% success)\n• Goal 2: 5-block tower (100% success)\n• Goal 3: tallest tower challenge (7 blocks max before toppling, with re-planning)\n• Goal 4.1: pentagon tower (2-layer bridged structure) — stability challenge\n• Goal 4.2: directional adjacency grid (2×2 base + 2 stacked) using ADJACENT-X/Y predicates\n\nTechnical highlights:\n• Predicates: ON, ONTABLE, CLEAR, HOLDING, HANDEMPTY\n• Closed-loop re-grounding: re-plans on failure\n• Collision-free motion primitives with attached object handling">
                 Details
               </button>
+              <a class="mini ghost" href="https://github.com/Yami1106/My_OMPLandGenesis_Projects" target="_blank" rel="noopener">View Code →</a>
             </div>
           </article>
 
@@ -415,16 +423,17 @@
               <div class="tag">ML</div>
               <div class="tag ghost">Computer Vision</div>
             </div>
-            <h3>Pb-Lite Boundary Detection (HW0)</h3>
+            <h3>Pb-Lite Boundary Detector — Filter Bank Fusion</h3>
             <p>
               Built Pb-Lite from scratch with 112-filter banks, texton/brightness/color clustering, half-disk χ² gradients,
               and fusion with Sobel+Canny for robust boundaries.
             </p>
             <div class="cardx-actions">
-              <button class="mini openModal" data-title="Pb-Lite Boundary Detection (HW0)"
+              <button class="mini openModal" data-title="Pb-Lite Boundary Detector — Filter Bank Fusion"
                 data-body="Filter banks (112): DoG 32, Leung–Malik 48, Gabor 32.\nClustering: Textons K=64, Brightness K=16, Color (Lab) K=16.\nGradients: Half-disk masks (3 radii × 8 orientations × 2 sides = 48), χ² distance for texture (Tm), brightness (Bm), color (Cm).\nFusion: Pb-Lite = (Tm + Bm + Cm)/3 × (0.5×Sobel + 0.5×Canny).\nResult: Suppressed texture false positives and outperformed Sobel/Canny qualitatively.">
                 Details
               </button>
+              <a class="mini ghost" href="https://github.com/Yami1106/Computer-Vision" target="_blank" rel="noopener">View Code →</a>
             </div>
           </article>
 
@@ -433,16 +442,17 @@
               <div class="tag">ML</div>
               <div class="tag ghost">Deep Learning</div>
             </div>
-            <h3>CIFAR-10 Classification (HW0 Phase 2)</h3>
+            <h3>CIFAR-10: ResNet vs ResNeXt vs DenseNet</h3>
             <p>
               Implemented CNN, ResNet, ResNeXt, DenseNet; best result: ResNet (92K params) with 84% test accuracy.
               Used AdamW + OneCycleLR over 50 epochs.
             </p>
             <div class="cardx-actions">
-              <button class="mini openModal" data-title="CIFAR-10 Classification (HW0 Phase 2)"
+              <button class="mini openModal" data-title="CIFAR-10: ResNet vs ResNeXt vs DenseNet"
                 data-body="Architectures:\n• Baseline CNN: 18K params, 70% accuracy (overfitting)\n• ResNet: 92K params, 84% accuracy (best)\n• ResNeXt: 128K params, 75% accuracy (cardinality=8)\n• DenseNet: 133K params, 82% accuracy (growth rate=12)\n\nTraining: 50 epochs, AdamW optimizer, OneCycleLR.\nFinding: ResNet performed best on CIFAR-10; ResNeXt/DenseNet showed more overfitting on small dataset.">
                 Details
               </button>
+              <a class="mini ghost" href="https://github.com/Yami1106/Computer-Vision" target="_blank" rel="noopener">View Code →</a>
             </div>
           </article>
 
@@ -451,16 +461,17 @@
               <div class="tag">ML</div>
               <div class="tag ghost">Calibration</div>
             </div>
-            <h3>Camera Calibration (AutoCalib • HW1)</h3>
+            <h3>Zhang's Camera Calibration from Scratch</h3>
             <p>
               Implemented Zhang’s calibration from scratch: homographies, intrinsics, extrinsics (Rodrigues),
               nonlinear refinement with radial distortion.
             </p>
             <div class="cardx-actions">
-              <button class="mini openModal" data-title="Camera Calibration (AutoCalib • HW1)"
+              <button class="mini openModal" data-title="Zhang's Camera Calibration from Scratch"
                 data-body="Method: Zhang’s flexible calibration from scratch.\nPipeline: corner detection (sub-pixel), normalized DLT homography per view, intrinsics from B=K^-T K^-1 constraints, extrinsics via Rodrigues, nonlinear refinement with radial distortion (k1,k2).\n\nResults:\n• 0.509 px RMS error (Rodrigues) vs 0.634 px (direct rotation matrix)\n• Parameters reduced: 163 → 85\n• Faster convergence: 128+ → 9 iterations\nDistortion: x' = x(1 + k1 r^2 + k2 r^4).">
                 Details
               </button>
+              <a class="mini ghost" href="https://github.com/Yami1106/Computer-Vision" target="_blank" rel="noopener">View Code →</a>
             </div>
           </article>
 
@@ -469,16 +480,17 @@
               <div class="tag">Robotics</div>
               <div class="tag ghost">Vision</div>
             </div>
-            <h3>MyAutoPano Phase 1 (Traditional Stitching)</h3>
+            <h3>Panorama Stitching — Classical Pipeline</h3>
             <p>
               Classical panorama stitching with cylindrical projection, ANMS, SSD matching + Lowe ratio,
               RANSAC homography, and distance transform blending.
             </p>
             <div class="cardx-actions">
-              <button class="mini openModal" data-title="MyAutoPano Phase 1 (Traditional Stitching)"
+              <button class="mini openModal" data-title="Panorama Stitching — Classical Pipeline"
                 data-body="Projection: Cylindrical (f = 1.1w) for wide FOV (90–135°).\nPipeline: cylindrical warping; Shi-Tomasi corners (150); ANMS top 100; 41×41 patch descriptors → blur → 8×8 subsample → normalize; SSD matching + Lowe ratio (τ=0.7); RANSAC homography (thr=5px, 2000 iters); sequential propagation; distance transform blending.\n\nResult: 100% image inclusion (Set3: 9/9) vs hierarchical (5/9).">
                 Details
               </button>
+              <a class="mini ghost" href="https://github.com/Yami1106/Computer-Vision" target="_blank" rel="noopener">View Code →</a>
             </div>
           </article>
 
@@ -487,16 +499,17 @@
               <div class="tag">ML</div>
               <div class="tag ghost">Deep Learning</div>
             </div>
-            <h3>MyAutoPano Phase 2 (Deep Learning HomographyNet)</h3>
+            <h3>HomographyNet — Supervised &amp; Unsupervised</h3>
             <p>
               Supervised + unsupervised HomographyNet with TensorDLT + STN warping; hybrid stitching combining classical
               features with DL homography estimation.
             </p>
             <div class="cardx-actions">
-              <button class="mini openModal" data-title="MyAutoPano Phase 2 (Deep Learning HomographyNet)"
+              <button class="mini openModal" data-title="HomographyNet — Supervised &amp; Unsupervised"
                 data-body="Supervised HomographyNet:\n• Dataset: 50k synthetic MS-COCO pairs (128×128 patches, ρ=32px)\n• Net: 8 conv layers (64→512) + 2 FC → 8D H4Pt output\n• Loss: MSE on H4Pt\n• Training: AdamW + OneCycleLR (max LR 5e-3 at epoch 12)\n• Result: 8.7 px validation MAE\n\nUnsupervised HomographyNet:\n• Loss: photometric consistency (Charbonnier) + valid pixel masking\n• Components: TensorDLT + STN differentiable warping\n• Result: 17.4 px validation MAE\n\nHybrid stitching: classical features (Shi-Tomasi + SSD) + DL homography; all-pairs photometric ordering. Noted domain mismatch issues (MS-COCO vs nature scenes).">
                 Details
               </button>
+              <a class="mini ghost" href="https://github.com/Yami1106/AutoPano_Phase2" target="_blank" rel="noopener">View Code →</a>
             </div>
           </article>
 
@@ -517,6 +530,7 @@
                 data-body="Built a complete Structure from Motion pipeline from scratch to reconstruct a 3D point cloud from 5 images of Unity Hall at WPI.\n\nPipeline stages:\n• SIFT feature extraction and matching across all image pairs\n• Fundamental matrix estimation with Hartley normalization and SVD rank-2 enforcement\n• RANSAC outlier rejection — pair 3-4 achieved 96% inlier ratio (1137/1183 matches)\n• Essential matrix decomposition with cheirality check to resolve 4 candidate camera poses\n• Linear triangulation of 592 3D points, refined to 562 via nonlinear optimization (minimizing reprojection error)\n• PnP + RANSAC for registering additional cameras into the world frame\n• Bundle adjustment over 1318 reconstructed points across 4 cameras for global consistency\n\nKey results:\n• Nonlinear triangulation reduced reprojection error significantly over linear baseline\n• Camera 3 rejected due to insufficient inliers — demonstrating PnP's dependence on correspondence quality\n• Final dense point cloud with optimized camera poses after bundle adjustment">
                 Details
               </button>
+              <a class="mini ghost" href="https://github.com/Yami1106/SFM_CV" target="_blank" rel="noopener">View Code →</a>
             </div>
           </article>
 
@@ -536,6 +550,7 @@
                 data-body="Implemented the complete NeRF pipeline from scratch including ray generation, positional encoding, hierarchical (coarse + fine) sampling, and volume rendering.\n\nArchitecture and training:\n• 5D input: 3D position (x,y,z) + 2D viewing direction (θ,φ) → outputs RGB color + volume density σ\n• Positional encoding with sinusoidal functions at multiple frequencies to capture high-frequency scene detail\n• Coarse network for uniform density estimation → fine network with importance sampling near surfaces\n• Volume rendering: C(r) = Σ Tᵢ(1-exp(-σᵢδᵢ))cᵢ with transmittance weighting\n\nResults:\n• Lego dataset: 100k iterations, PSNR 27.42 dB, SSIM 0.9084 — sharp edges and detailed reconstruction\n• Ship dataset: 70k iterations, PSNR 25.75 dB, SSIM 0.7991\n• Custom dataset (Samsung S23, 78 images via COLMAP): loss fluctuated 0.20-0.22, PSNR 20.13 dB\n• Second custom dataset (341 images): converged to loss 0.006, PSNR 19.65 dB\n\nAblation study:\n• Without positional encoding: output collapsed to pure white — MLP cannot learn high-frequency detail from raw coordinates\n• Fix: replaced ReLU with Softplus activation to prevent dead neurons during early training\n• Background correction: accuracy map + white fill for unabsorbed rays">
                 Details
               </button>
+              <a class="mini ghost" href="https://github.com/Yami1106/NeRF" target="_blank" rel="noopener">View Code →</a>
             </div>
           </article>
 
@@ -555,6 +570,7 @@
                 data-body="End-to-end perception-to-visualization pipeline for autonomous driving, processing 13 real-world driving sequences from a Tesla Model S dashcam.\n\nPerception stack:\n• YOLOv8 + ByteTracker for vehicle and pedestrian detection and tracking\n• HybridNets + classical CV for lane detection with solid/dashed and white/yellow classification\n• YOLO-World (open-vocabulary) for stop signs and speed limits + EasyOCR for numeric extraction\n• HSV color thresholding for traffic light state classification (red/yellow/green)\n• Depth Anything V2 (ViT-L encoder) for monocular depth estimation\n• YOLOv8-Pose for pedestrian skeleton reconstruction\n\nVehicle state estimation:\n• RAFT optical flow for motion detection between consecutive frames\n• Sampson distance to separate ego-motion from independent object motion\n• Homography-based second-layer verification\n• Brake light detection via HSV analysis of rear bounding box region\n\nExtra credit — Collision prediction:\n• 3-phase approach: bounding box overlap → depth similarity → mutual motion check\n• Vehicles color-coded: green (moving), blue (parked), yellow/orange (collision risk)\n\nRendering: Full Blender pipeline with procedural geometry, emission shaders for signals, and 3D vehicle models">
                 Details
               </button>
+              <a class="mini ghost" href="https://github.com/Yami1106/Computer-Vision" target="_blank" rel="noopener">View Code →</a>
             </div>
           </article>
 
@@ -574,6 +590,7 @@
                 data-body="Two-phase project combining classical filter-based and deep learning approaches to visual-inertial odometry.\n\nPhase 1 — Classical S-MSCKF:\n• Stereo Multi-State Constraint Kalman Filter on EuRoC MH_01_easy sequence\n• IMU error-state propagation with 3rd-order matrix exponential + RK4 nominal integration\n• Sliding window of camera poses with multi-view feature constraints\n• Gravity and bias initialization from first 200 IMU samples\n• Joseph-form covariance update for numerical stability\n• Result: 0.1201m RMSE ATE after SE(3) alignment with Vicon ground truth\n\nPhase 2 — Deep Learning VIO:\n• Custom synthetic dataset: 20 scenes from 13 trajectory shapes in Blender, 10k poses per scene at 100Hz\n• Three networks trained in PyTorch:\n  — Vision-only: multi-scale 3-stream CNN encoder (fine/mid/coarse) → translation + quaternion rotation\n  — IMU-only: bidirectional LSTM with temporal attention → translation (rotation from gyro integration)\n  — Visual-Inertial: learned sigmoid gate fusing vision + IMU features: g·fᵥ + (1-g)·fᵢ\n• Loss: weighted MSE (w_z=4.0 for altitude) + quaternion geodesic + 5-step rollout penalty\n• Dead-reckoning ATE: Vision 4.71m, IMU 2.73m, VI 1.94m\n• After global optimization (loop closure + smoothness): VI achieved 1.18m — 39% improvement\n\nAblation: fully learned rotation with noisy IMU, 6D rotation representation, and depth auxiliary head — showed precomputed gyro rotation is a powerful prior (3.69m vs 1.94m without it)">
                 Details
               </button>
+              <a class="mini ghost" href="https://github.com/Yami1106/VIO_CV" target="_blank" rel="noopener">View Code →</a>
             </div>
           </article>
 
@@ -674,8 +691,9 @@
         <div class="grid-2">
           <div class="panel reveal">
             <h3>Let's talk</h3>
-            <p>I'm actively seeking Summer/Fall 2026 internships in robotics, motion planning, computer vision,
-            and autonomous systems. Excited to work on perception, planning, and sensor fusion for real-world platforms.</p>
+            <p>I'm actively seeking a Summer 2026 internship in robotics, motion planning, computer vision,
+            or autonomous systems — and available to start soon. Excited to work on perception, planning, and sensor fusion
+            for real-world platforms.</p>
 
             <div class="contact-list">
               <a class="contact-item" href="https://www.linkedin.com/in/ashish-sukumar" target="_blank" rel="noopener" aria-label="LinkedIn">

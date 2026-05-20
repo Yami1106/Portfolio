@@ -185,15 +185,13 @@ navLinks.forEach(link => {
   });
 });
 
-// ---------- Navigation hover indicator (no scrollspy) ----------
+// ---------- Navigation indicator with scroll spy ----------
 const navIndicator = $("#navIndicator");
 
 function moveIndicatorTo(el) {
   if (!navIndicator || !el || !navMenu) return;
-
   const menuRect = navMenu.getBoundingClientRect();
   const r = el.getBoundingClientRect();
-
   navIndicator.style.left = (r.left - menuRect.left) + "px";
   navIndicator.style.top = (r.top - menuRect.top) + "px";
   navIndicator.style.width = r.width + "px";
@@ -201,25 +199,63 @@ function moveIndicatorTo(el) {
   navIndicator.style.opacity = "1";
 }
 
-// Show indicator on hover
+// Track which link is active based on scroll position
+let activeNavLink = navLinks[0];
+let isHoveringNav = false;
+
+// Map each nav link to its target section
+const sectionIds = ["about", "skills", "projects", "experience", "contact"];
+const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+function getActiveSectionLink() {
+  const headerH = topbar ? topbar.getBoundingClientRect().height : 0;
+
+  // If scrolled to the bottom of the page, always activate the last section
+  const atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 10;
+  if (atBottom && sections.length) {
+    const last = sections[sections.length - 1];
+    return navLinks.find(l => l.getAttribute("href") === `#${last.id}`) || null;
+  }
+
+  const scrollMid = window.scrollY + headerH + 60;
+
+  let matched = null;
+  for (const section of sections) {
+    const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+    if (scrollMid >= sectionTop) matched = section;
+  }
+
+  if (!matched) return null;
+  return navLinks.find(l => l.getAttribute("href") === `#${matched.id}`) || null;
+}
+
+function syncIndicatorToScroll() {
+  const link = getActiveSectionLink();
+  activeNavLink = link || navLinks[0];
+  if (!isHoveringNav) moveIndicatorTo(activeNavLink);
+}
+
+// On hover: show hovered link; on leave: restore scroll-spy link
 navLinks.forEach(link => {
   link.addEventListener("mouseenter", () => {
+    isHoveringNav = true;
     moveIndicatorTo(link);
   });
 });
-
-// Initialize indicator position on first link
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    const first = navLinks[0];
-    if (first) moveIndicatorTo(first);
-  }, 100);
+navMenu?.addEventListener("mouseleave", () => {
+  isHoveringNav = false;
+  moveIndicatorTo(activeNavLink);
 });
 
-// Update indicator position on resize
+// Update on scroll
+window.addEventListener("scroll", syncIndicatorToScroll, { passive: true });
+
+// Initialize on load and on resize
+window.addEventListener("load", () => {
+  setTimeout(syncIndicatorToScroll, 100);
+});
 window.addEventListener("resize", () => {
-  const first = navLinks[0];
-  if (first) moveIndicatorTo(first);
+  moveIndicatorTo(activeNavLink);
 });
 
 // ---------- Project filtering ----------
@@ -245,9 +281,28 @@ const modalTitle = $("#modalTitle");
 const modalBody = $("#modalBody");
 const modalClose = $("#modalClose");
 
+function formatModalBody(text) {
+  if (!text) return "";
+  // Split into blocks by double newline
+  const blocks = text.split(/\n\n+/);
+  return blocks.map(block => {
+    const lines = block.split("\n").map(l => l.trim()).filter(Boolean);
+    // If any line starts with a bullet
+    if (lines.some(l => l.startsWith("•") || l.startsWith("-"))) {
+      const items = lines.map(l => `<li>${l.replace(/^[•\-]\s*/, "")}</li>`).join("");
+      return `<ul style="margin:0 0 10px;padding-left:18px;color:var(--muted)">${items}</ul>`;
+    }
+    // Bold the first line if it looks like a header (no period, shorter)
+    if (lines.length > 1 && lines[0].length < 80 && !lines[0].endsWith(".")) {
+      return `<p style="margin:0 0 8px"><strong style="color:var(--text)">${lines[0]}</strong><br>${lines.slice(1).join("<br>")}</p>`;
+    }
+    return `<p style="margin:0 0 10px">${lines.join("<br>")}</p>`;
+  }).join("");
+}
+
 function openModal(title, body) {
   modalTitle.textContent = title || "Details";
-  modalBody.textContent = body || "";
+  modalBody.innerHTML = formatModalBody(body);
   modal.classList.add("show");
   modal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
