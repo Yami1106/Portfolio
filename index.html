@@ -263,6 +263,28 @@
         </div>
 
         <div class="cards">
+          <!-- Robot Dynamics Visualizer -->
+          <article class="cardx reveal" data-tags="robotics">
+            <div class="cardx-top">
+              <div class="tag">Robotics</div>
+              <div class="tag ghost">Interactive Tool</div>
+            </div>
+            <h3>Robot Dynamics Visualizer</h3>
+            <p>
+              Browser-based interactive tool for robot kinematics and dynamics — FK, IK, Jacobians, and
+              Recursive Newton-Euler all implemented from scratch in vanilla JS. Supports 2–6 DOF robots,
+              click-to-target IK, live torque visualisation, and a custom robot builder. No libraries. No dependencies. Pure math.
+            </p>
+            <div class="cardx-actions">
+              <button class="mini openModal" data-title="Robot Dynamics Visualizer"
+                data-body="An interactive robotics calculator and 3D visualiser built entirely in vanilla JavaScript, following Modern Robotics (Lynch & Park, 2017) conventions throughout.\n\nKinematics:\n• Forward Kinematics via Product of Exponentials: T(q) = e^[S₁]q₁ · e^[S₂]q₂ · … · M\n• Matrix exponentials computed in closed form via Rodrigues — no series truncation\n• Inverse Kinematics: Levenberg-Marquardt damped least-squares (Δq = Jₐᵀ(JₐJₐᵀ + λ²I)⁻¹e), joint limits enforced, threshold 10⁻⁴ m\n• Space Jacobian Jₛ, Body Jacobian Jb, Analytical Jacobian Jₐ — all implemented\n\nDynamics (Recursive Newton-Euler):\n• Forward pass: propagate spatial velocities + accelerations through 6×6 spatial inertia matrices\n• Backward pass: propagate spatial forces to joint torques\n• Outputs: gravity torques, Coriolis torques, full inverse dynamics, n×n mass matrix\n• Verified: 3-DOF robot gravity torques 39.24 / 14.715 / 2.943 Nm ✓, mass matrix symmetric ✓\n\nFeatures:\n• DOF picker (2–6 joints) — all math and visuals rebuild instantly\n• Click-to-target IK: click viewport to place target sphere, LM solver runs on demand\n• Per-joint editable limits with visual warnings (yellow < 8%, red < 2% margin)\n• Signed torque bar chart + full n×n mass matrix with diagonal highlighting\n• Custom robot builder: paste screw axes and home transform M (space or body frame)\n• Orthographic / perspective camera with full orbit, zoom, pan\n\nTech: Vanilla JS · Three.js r134 · HTML · CSS — no bundler, no npm, no robotics library">
+                Details
+              </button>
+              <a class="mini ghost" href="https://yamirobotdynamics.netlify.app/" target="_blank" rel="noopener">Live Demo →</a>
+              <a class="mini ghost" href="https://github.com/Yami1106/Robot_Dynamics_Interactivate" target="_blank" rel="noopener">View Code →</a>
+            </div>
+          </article>
+
           <!-- Existing projects -->
           <article class="cardx reveal" data-tags="robotics ml iot">
             <div class="cardx-top">
