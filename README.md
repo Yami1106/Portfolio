@@ -30,7 +30,7 @@ My personal portfolio — a dark, animated, single-page site showcasing 17 proje
 - **Detailed project modals** — full technical specs, benchmarks, and results on click
 - **Dark / light theme** toggle with localStorage persistence
 - **Contact form** powered by Formspree (no backend needed)
-- **Two resume variants** — Robotics and Computer Vision tracks
+- **One-click resume download** — always the latest CV
 - Fully **responsive** for mobile and desktop
 
 ---
