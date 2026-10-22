@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ashish Sukumar • Portfolio</title>
-  <meta name="description" content="Robotics • Embedded Systems • ML — Ashish Sukumar" />
+  <meta name="description" content="Robotics • Computer Vision • Perception — Ashish Sukumar" />
   <meta name="theme-color" content="#0b0f1a" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,9 +35,11 @@
 
         <div class="nav-menu" id="navMenu">
           <a href="#about" class="nav-link">About</a>
+          <a href="#education" class="nav-link">Education</a>
           <a href="#skills" class="nav-link">Skills</a>
           <a href="#projects" class="nav-link">Projects</a>
           <a href="#experience" class="nav-link">Experience</a>
+          <a href="#publications" class="nav-link">Publications</a>
           <a href="#contact" class="nav-link">Contact</a>
 
           <!-- moving highlight behind active link -->
@@ -76,7 +78,7 @@
         <div class="hero-copy">
           <div class="badge reveal">
             <span class="badge-dot" aria-hidden="true"></span>
-            <span>M.S. Robotics Engineering @ WPI </span>
+            <span>M.S. Robotics Engineering @ WPI • GPA 3.83</span>
           </div>
 
           <h1 class="reveal">
@@ -85,9 +87,9 @@
           </h1>
 
           <p class="lead reveal">
-            Robotics engineering graduate student with hands-on experience in ROS, SLAM, path planning,
-            embedded systems, 3D computer vision (SfM, NeRF, VIO), and ML-driven perception—bridging
-            simulation to real-world hardware.
+            Robotics engineering graduate student specializing in computer vision, deep-learning perception,
+            and multi-view 3D reconstruction (NeRF, SfM, VIO)—with a strong foundation in probabilistic
+            estimation, motion planning, and deploying autonomous systems on embedded hardware.
           </p>
 
           <div class="hero-cta reveal">
@@ -132,10 +134,13 @@
                 <span><b>Now:</b> M.S. Robotics Engineering @ WPI (2025–Present)</span>
               </div>
               <div class="card-item"><span class="dot"></span>
-                <span><b>Focus:</b> Deep Learning, Computer Vision, ROS2, Embedded Systems</span>
+                <span><b>Focus:</b> Vision-based perception, 3D reconstruction, state estimation</span>
               </div>
               <div class="card-item"><span class="dot"></span>
-                <span><b>Highlight:</b> Fire-aware Smart-Bot (ICIoT 2025), ML risk prediction publication</span>
+                <span><b>Highlight:</b> Fire-aware Smart-Bot (ICIoT 2025), ML risk prediction publication (IJERCSE)</span>
+              </div>
+              <div class="card-item"><span class="dot"></span>
+                <span><b>Seeking:</b> Fall 2026 Directed Research / MS Thesis in perception for safety-critical autonomy</span>
               </div>
             </div>
 
@@ -149,14 +154,14 @@
               </a>
 
               <!-- LinkedIn -->
-              <a class="icon-link" href="https://www.linkedin.com/in/ashish-sukumar" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <a class="icon-link" href="https://www.linkedin.com/in/ashish-sukumar-086663272" target="_blank" rel="noopener" aria-label="LinkedIn">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.95v5.66H9.35V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/>
                 </svg>
               </a>
 
               <!-- Email -->
-              <a class="icon-link" href="/cdn-cgi/l/email-protection#7617051e474746404445474636111b171f1a5815191b" aria-label="Email">
+              <a class="icon-link" href="mailto:ash11062310@gmail.com" aria-label="Email">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/>
                 </svg>
@@ -196,6 +201,7 @@
             <h3>Highlights</h3>
             <ul class="bullets">
               <li>Junior Project Technical Assistant at e-Yantra (IIT Bombay initiative): robotics workshops + development</li>
+              <li>Robotics Instructor Intern at Nichols College (Summer 2026): taught hands-on robotics + coding to youth</li>
               <li>Built ROS projects including differential drive + skid-steer robots with obstacle avoidance + mapping</li>
               <li>Created fire-detection robotics system with localization, navigation, live streaming, and app control</li>
               <li>Implemented sampling-based and control-based planners (RRT, PRM*, KPIECE1, SST, AO-RRT) in OMPL</li>
@@ -203,6 +209,34 @@
               <li>Built NeRF from scratch — neural 3D scene reconstruction achieving 27.4 dB PSNR</li>
               <li>Implemented full SfM pipeline and visual-inertial odometry (S-MSCKF + deep VIO)</li>
               <li>Created autonomous driving visualization system: dashcam to 3D scene with collision prediction</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">Education</h2>
+        <div class="grid-2">
+          <div class="panel reveal">
+            <h3>Worcester Polytechnic Institute</h3>
+            <p><b>M.S. Robotics Engineering</b> • Worcester, MA • 2025 — Present (expected May 2027)</p>
+            <ul class="bullets">
+              <li>GPA: 3.83 / 4.00</li>
+              <li>Coursework: Computer Vision (RBE 549), Deep Learning for Perception, Foundations of Robotics,
+                Robot Dynamics, Motion Planning</li>
+            </ul>
+          </div>
+
+          <div class="panel reveal">
+            <h3>SRM Institute of Science and Technology</h3>
+            <p><b>B.Tech Computer Science &amp; Engineering</b> • Chennai, India • 2021 — 2025</p>
+            <ul class="bullets">
+              <li>CGPA: 9.54 / 10</li>
+              <li>Excellence Award for Outstanding Student &amp; Best Class Representative</li>
+              <li>2nd Place — Project Expo, SRMIST</li>
             </ul>
           </div>
         </div>
@@ -243,6 +277,81 @@
           <div class="skill">
             <div class="skill-top"><span>Full-Stack Development (React / HTML / CSS)</span><span class="pct">75%</span></div>
             <div class="bar"><span style="width:75%"></span></div>
+          </div>
+        </div>
+
+        <div class="tools-grid reveal">
+          <div class="tool-category">
+            <h4>Languages</h4>
+            <div class="tool-chips">
+              <span class="tool-chip">C++</span><span class="tool-chip">Python</span>
+              <span class="tool-chip">C</span><span class="tool-chip">Bash</span>
+            </div>
+          </div>
+          <div class="tool-category">
+            <h4>Deep Learning</h4>
+            <div class="tool-chips">
+              <span class="tool-chip">PyTorch</span><span class="tool-chip">TensorFlow</span>
+              <span class="tool-chip">CNNs</span><span class="tool-chip">Multi-scale Encoders</span>
+              <span class="tool-chip">Bi-LSTM + Attention</span>
+            </div>
+          </div>
+          <div class="tool-category">
+            <h4>Computer Vision &amp; 3D</h4>
+            <div class="tool-chips">
+              <span class="tool-chip">NeRF</span><span class="tool-chip">SfM</span>
+              <span class="tool-chip">COLMAP</span><span class="tool-chip">Camera Calibration</span>
+              <span class="tool-chip">Pose Estimation</span><span class="tool-chip">Bundle Adjustment</span>
+              <span class="tool-chip">Stereo Vision</span><span class="tool-chip">Point Clouds</span>
+            </div>
+          </div>
+          <div class="tool-category">
+            <h4>Estimation &amp; Sensing</h4>
+            <div class="tool-chips">
+              <span class="tool-chip">VIO (S-MSCKF)</span><span class="tool-chip">EKF</span>
+              <span class="tool-chip">Kalman Filtering</span><span class="tool-chip">Uncertainty Propagation</span>
+              <span class="tool-chip">IMU Fusion</span><span class="tool-chip">SLAM</span>
+            </div>
+          </div>
+          <div class="tool-category">
+            <h4>Motion Planning &amp; Control</h4>
+            <div class="tool-chips">
+              <span class="tool-chip">RRT / RRT*</span><span class="tool-chip">PRM / PRM*</span>
+              <span class="tool-chip">RRTConnect</span><span class="tool-chip">AO-RRT</span>
+              <span class="tool-chip">EST / SST / KPIECE1</span><span class="tool-chip">TAMP / PDDL</span>
+              <span class="tool-chip">Kinodynamic Planning</span><span class="tool-chip">Trajectory Optimization</span>
+            </div>
+          </div>
+          <div class="tool-category">
+            <h4>Frameworks &amp; Simulation</h4>
+            <div class="tool-chips">
+              <span class="tool-chip">ROS2 / ROS</span><span class="tool-chip">OMPL</span>
+              <span class="tool-chip">MoveIt</span><span class="tool-chip">Gazebo</span>
+              <span class="tool-chip">Webots</span><span class="tool-chip">Genesis</span>
+              <span class="tool-chip">RViz</span><span class="tool-chip">Blender (synthetic data)</span>
+            </div>
+          </div>
+          <div class="tool-category">
+            <h4>Hardware</h4>
+            <div class="tool-chips">
+              <span class="tool-chip">Arduino</span><span class="tool-chip">Raspberry Pi</span>
+              <span class="tool-chip">ESP32</span><span class="tool-chip">IMU</span>
+              <span class="tool-chip">Ultrasonic / IR / Proximity</span><span class="tool-chip">Gas Sensors</span>
+            </div>
+          </div>
+          <div class="tool-category">
+            <h4>Build &amp; Systems</h4>
+            <div class="tool-chips">
+              <span class="tool-chip">CMake</span><span class="tool-chip">Docker</span>
+              <span class="tool-chip">Git</span><span class="tool-chip">Linux</span>
+            </div>
+          </div>
+          <div class="tool-category">
+            <h4>Design Tools</h4>
+            <div class="tool-chips">
+              <span class="tool-chip">Fusion 360</span><span class="tool-chip">AutoCAD</span>
+              <span class="tool-chip">TinkerCAD</span>
+            </div>
           </div>
         </div>
       </div>
@@ -630,6 +739,25 @@
             <div class="tline"></div>
             <div class="tcard">
               <div class="tmeta">
+                <span class="trole">Robotics Instructor Intern • Our Bright Future — STEMing Into Sports Program, Nichols College</span>
+                <span class="tdate">Jun 2026 — Aug 2026</span>
+              </div>
+              <p>
+                Planned and facilitated hands-on robotics, coding, and engineering lessons, guiding students through
+                designing, building, and programming robotic projects.
+              </p>
+              <ul class="bullets">
+                <li>Taught fundamental robotics and engineering concepts through project-based learning</li>
+                <li>Mentored youth participants from diverse backgrounds, fostering critical thinking, teamwork, and problem-solving</li>
+                <li>Monitored student progress and supported program demonstrations and showcases</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="titem reveal">
+            <div class="tline"></div>
+            <div class="tcard">
+              <div class="tmeta">
                 <span class="trole">Digital Consultant • WPI Small Business Digitization Initiative (SBDI)</span>
                 <span class="tdate">Oct 2025 — Dec 2025</span>
               </div>
@@ -675,7 +803,8 @@
                 integrating perception and decision-making logic end-to-end.
               </p>
               <ul class="bullets">
-                <li>Developed embedded systems software and sensor-based image processing for real-world robot interaction</li>
+                <li>Built image processing and sensor-based modules (camera, IR, proximity) for real-world autonomous robot interaction and navigation</li>
+                <li>Produced technical documentation deployed nationally via mdBook</li>
                 <li>Performed system-level debugging of hardware-software integration across sensor, actuation, and control layers</li>
                 <li>Formally recognized by Prof. Kavi Arya (Principal Investigator, IIT Bombay) for technical proficiency</li>
                 <li>Delivered two workshops on Embedded Systems and Robotics to school students nationally</li>
@@ -705,6 +834,38 @@
       </div>
     </section>
 
+    <!-- Publications -->
+    <section id="publications" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">Publications &amp; Certifications</h2>
+        <div class="grid-2">
+          <div class="panel reveal">
+            <h3>Publications</h3>
+            <ul class="bullets">
+              <li>
+                <b>Fire Aware Smart-Bot with AI Responsive System</b><br />
+                Ashish S., Jeya R., Rithish R., Donipart R., &amp; Ganesh K. • ICIoT 2025
+              </li>
+              <li>
+                <b>Fire Detection and Risk Prediction for Smart Safety: A Neural Network-Driven IoT Approach</b><br />
+                Ashish S., Jeya R., Rithish R., Donipart R., &amp; Ganesh K. • IJERCSE, 2025
+              </li>
+            </ul>
+          </div>
+
+          <div class="panel reveal">
+            <h3>Certifications &amp; Achievements</h3>
+            <ul class="bullets">
+              <li>Red Hat Certified System Administrator (RHCSA)</li>
+              <li>Oracle Cloud Infrastructure (OCI) Certified</li>
+              <li>2nd Place — Project Expo, SRMIST</li>
+              <li>Formally recognised by Prof. Kavi Arya (PI, e-Yantra, IIT Bombay) for technical proficiency</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact -->
     <section id="contact" class="section">
       <div class="container">
@@ -713,12 +874,12 @@
         <div class="grid-2">
           <div class="panel reveal">
             <h3>Let's talk</h3>
-            <p>I'm actively seeking a Summer 2026 internship in robotics, motion planning, computer vision,
-            or autonomous systems — and available to start soon. Excited to work on perception, planning, and sensor fusion
-            for real-world platforms.</p>
+            <p>I'm seeking a Fall 2026 Directed Research / MS Thesis position in vision-based perception for
+            safety-critical autonomous systems. Excited to work on 3D reconstruction, deep-learning perception, and
+            uncertainty-aware state estimation for real-world platforms.</p>
 
             <div class="contact-list">
-              <a class="contact-item" href="https://www.linkedin.com/in/ashish-sukumar" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <a class="contact-item" href="https://www.linkedin.com/in/ashish-sukumar-086663272" target="_blank" rel="noopener" aria-label="LinkedIn">
                 <span class="contact-ico" aria-hidden="true">
                   <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.95v5.66H9.35V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
                 </span>
@@ -732,7 +893,7 @@
                 <span class="contact-text">GitHub</span>
               </a>
 
-              <a class="contact-item" href="/cdn-cgi/l/email-protection#93f2e0fba2a2a3a5a1a0a2a3d3f4fef2faffbdf0fcfe" aria-label="Email">
+              <a class="contact-item" href="mailto:ash11062310@gmail.com" aria-label="Email">
                 <span class="contact-ico" aria-hidden="true">
                   <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg>
                 </span>

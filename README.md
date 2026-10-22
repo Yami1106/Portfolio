@@ -6,7 +6,7 @@
 
 [![Live Site](https://img.shields.io/badge/🌐_Live_Site-yamiportfolio.netlify.app-7c3aed?style=for-the-badge)](https://yamiportfolio.netlify.app/)
 &nbsp;
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-ashish--sukumar-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/ashish-sukumar)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-ashish--sukumar-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/ashish-sukumar-086663272)
 &nbsp;
 [![GitHub](https://img.shields.io/badge/GitHub-Yami1106-181717?style=for-the-badge&logo=github)](https://github.com/Yami1106)
 

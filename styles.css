@@ -120,7 +120,7 @@ section{ scroll-margin-top: calc(var(--header-h) + 22px); }
   background: radial-gradient(circle at 30% 30%, var(--accent2), var(--accent1));
   box-shadow: 0 0 24px rgba(34,211,238,.35);
 }
-.logo-text{ opacity:.95; }
+.logo-text{ opacity:.95; white-space:nowrap; }
 
 .nav{ display:flex; align-items:center; }
 .nav-menu{
@@ -979,4 +979,12 @@ input:focus, textarea:focus{
   .grid-2{ grid-template-columns: 1fr; }
   .tmeta{ flex-direction: column; align-items: flex-start; }
   .tdate{ white-space: normal; }
+}
+/* Toolbox below skill bars */
+.skills + .tools-grid{ margin-top: 20px; }
+
+/* Keep the 7-link nav on one row between mobile and wide desktop */
+@media (min-width: 721px) and (max-width: 1180px){
+  .nav-menu{ gap:4px; }
+  .nav-link{ padding:10px 7px; font-size:14px; }
 }

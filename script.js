@@ -204,7 +204,7 @@ let activeNavLink = navLinks[0];
 let isHoveringNav = false;
 
 // Map each nav link to its target section
-const sectionIds = ["about", "skills", "projects", "experience", "contact"];
+const sectionIds = ["about", "education", "skills", "projects", "experience", "publications", "contact"];
 const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
 
 function getActiveSectionLink() {
